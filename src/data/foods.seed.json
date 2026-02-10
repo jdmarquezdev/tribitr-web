@@ -1,0 +1,1287 @@
+{
+  "foods": [
+    {
+      "id": "aceite_de_girasol",
+      "name": "Aceite de girasol",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "El aceite de girasol es un condimento versátil con sabor neutro y alto punto de humo, ideal para cocinar. Este contenido no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Sunflower_oil_and_sunflower.jpg/1280px-Sunflower_oil_and_sunflower.jpg",
+      "imageAttribution": "Wikipedia: Aceite de girasol",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Aceite_de_girasol"
+    },
+    {
+      "id": "aceite_oliva",
+      "name": "Aceite de oliva",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "Aceite de oliva, base de la dieta mediterránea desde la antigüedad, es un condimento versátil y saludable para preparar alimentos infantiles. Este contenido no sustituye consejo médico.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Aceite_de_oliva.png",
+      "imageAttribution": "Wikipedia: Aceite de oliva",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Aceite_de_oliva"
+    },
+    {
+      "id": "acelga",
+      "name": "Acelga",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "La acelga es una verdura de hoja verde con tallos coloridos (blancos, rojos o amarillos), muy utilizada en la cocina española, especialmente en platos como la ensalada de acelga o guisos. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/1112/5133715406_8a8b7cb45c_b.jpg",
+      "imageAttribution": "Openverse: Acelgas - Herbolario Allium: www.alliumherbal.com",
+      "imageAttributionUrl": "https://www.flickr.com/photos/54272800@N04/5133715406"
+    },
+    {
+      "id": "aguacate",
+      "name": "Aguacate",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "El aguacate es una fruta cremosa rica en grasas saludables y nutrientes esenciales, ideal para complementar la alimentación infantil. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/60/167421347_6cdaf31a88_b.jpg",
+      "imageAttribution": "Openverse: aguacates para todos - ruurmo",
+      "imageAttributionUrl": "https://www.flickr.com/photos/81752595@N00/167421347"
+    },
+    {
+      "id": "albahaca",
+      "name": "Albahaca",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "La albahaca es una hierba aromática muy utilizada en la cocina mediterránea, ideal para dar sabor a platos infantiles. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://live.staticflickr.com/3388/3667590296_79dd8cb44a_b.jpg",
+      "imageAttribution": "Openverse: Basilico Basil-Albahaca-Taormina-Sicilia-Italy - Creative Commons by gnuckx - gnuckx",
+      "imageAttributionUrl": "https://www.flickr.com/photos/34409164@N06/3667590296"
+    },
+    {
+      "id": "albaricoque",
+      "name": "Albaricoque",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "El albaricoque es una fruta jugosa originaria de Asia, rica en vitamina A y fibra. Este contenido es informativo y no sustituye el consejo médico.",
+      "imageUrl": "https://live.staticflickr.com/4074/4740890943_82e9400a4b_b.jpg",
+      "imageAttribution": "Openverse: Albaricoques - Apricots - Juan Antonio Capó",
+      "imageAttributionUrl": "https://www.flickr.com/photos/57839947@N00/4740890943"
+    },
+    {
+      "id": "almejas",
+      "name": "Almejas",
+      "family": "marisco",
+      "allergens": [
+        "moluscos"
+      ],
+      "seedDescription": "Las almejas son mariscos bivalvos muy apreciados en la cocina española, especialmente en platos como el arroz a la marinera. Este contenido no es consejo médico.",
+      "imageUrl": "https://live.staticflickr.com/3028/2787240679_315b8388c0_b.jpg",
+      "imageAttribution": "Openverse: Almejas en Salsa Verde - jlastras",
+      "imageAttributionUrl": "https://www.flickr.com/photos/22662305@N04/2787240679"
+    },
+    {
+      "id": "almendra",
+      "name": "Almendra",
+      "family": "frutos secos",
+      "allergens": [
+        "frutos_secos"
+      ],
+      "seedDescription": "La almendra es técnicamente una semilla, no un fruto seco propiamente dicho, y es rica en vitamina E y grasas saludables. Este contenido es informativo y no sustituye la consulta médica.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Almonds_-_in_shell%2C_shell_cracked_open%2C_shelled%2C_blanched.jpg/1280px-Almonds_-_in_shell%2C_shell_cracked_open%2C_shelled%2C_blanched.jpg",
+      "imageAttribution": "Wikipedia: Almendra",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Almendra"
+    },
+    {
+      "id": "alubias",
+      "name": "Alubias",
+      "family": "legumbres",
+      "allergens": [],
+      "seedDescription": "Las alubias son legumbres ricas en proteínas y fibra, ideales para platos tradicionales como la fabada. Este contenido no sustituye el consejo médico.",
+      "imageUrl": "https://live.staticflickr.com/4147/5223931299_469f8308e0_b.jpg",
+      "imageAttribution": "Openverse: Alubias con chorizo vegetal - Lablascovegmenu",
+      "imageAttributionUrl": "https://www.flickr.com/photos/35022955@N06/5223931299"
+    },
+    {
+      "id": "anacardo",
+      "name": "Anacardo",
+      "family": "frutos secos",
+      "allergens": [
+        "frutos_secos"
+      ],
+      "seedDescription": "El anacardo es un fruto seco originario de América del Sur, con un sabor suave y textura crujiente. Curiosidad: crece en la base de la manzana del anacardo, un fruto tropical.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Anacardos%2C_frutos_secos.jpg",
+      "imageAttribution": "Openverse: Anacardos, frutos secos - Juan Emilio Prades Bel",
+      "imageAttributionUrl": "https://commons.wikimedia.org/w/index.php?curid=155066364"
+    },
+    {
+      "id": "apio",
+      "name": "Apio",
+      "family": "verduras",
+      "allergens": [
+        "apio"
+      ],
+      "seedDescription": "El apio es una verdura crujiente y refrescante, rica en agua y fibra, ideal para añadir textura a platos infantiles. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://c.pxhere.com/photos/a8/4a/celery_vegetables_green_food_vitamins_healthy_medicinal_plant-1360377.jpg!d",
+      "imageAttribution": "Fuente: c.pxhere.com",
+      "imageAttributionUrl": "https://c.pxhere.com"
+    },
+    {
+      "id": "arandanos",
+      "name": "Arandanos",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "Los arandanos son pequeñas frutas ricas en antioxidantes y vitaminas, ideales para snacks saludables en la dieta infantil. Este contenido es informativo y no sustituye el consejo médico.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/10000/velka/1-1248162279aYOF.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "arroz",
+      "name": "Arroz",
+      "family": "cereales",
+      "allergens": [],
+      "seedDescription": "Un alimento suave y versatil llamado Arroz, ideal para introducir en pequenas porciones y observar la tolerancia.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/JasmineRice.jpg/1280px-JasmineRice.jpg",
+      "imageAttribution": "Wikipedia: Arroz jazmín",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Arroz_jazm%C3%ADn"
+    },
+    {
+      "id": "atun",
+      "name": "Atun",
+      "family": "pescado",
+      "allergens": [
+        "pescado"
+      ],
+      "seedDescription": "El atún es un pescado azul rico en proteínas y omega-3, ideal para el crecimiento infantil. Curiosidad: algunas especies migran miles de kilómetros anualmente.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Escabeche_de_At%C3%BAn.jpg/1280px-Escabeche_de_At%C3%BAn.jpg",
+      "imageAttribution": "Wikipedia: Ventresca de atún",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Ventresca_de_at%C3%BAn"
+    },
+    {
+      "id": "avellana",
+      "name": "Avellana",
+      "family": "frutos secos",
+      "allergens": [
+        "frutos_secos"
+      ],
+      "seedDescription": "La avellana es un fruto seco con sabor dulce y tostado, muy utilizado en repostería y snacks. Su nombre proviene del latín 'nux avellana', en honor a la ciudad italiana de Avellino.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/31/Hazelnuts_%28Corylus_avellana%29.jpg",
+      "imageAttribution": "Openverse: Hazelnuts (Corylus avellana) - Ivar Leidus",
+      "imageAttributionUrl": "https://commons.wikimedia.org/w/index.php?curid=98710145"
+    },
+    {
+      "id": "avena",
+      "name": "Avena",
+      "family": "cereales",
+      "allergens": [
+        "gluten"
+      ],
+      "seedDescription": "La avena es un cereal común en desayunos españoles y puede contener gluten por contaminación cruzada. Este contenido es informativo y no sustituye consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Haverkorrels_Avena_sativa.jpg",
+      "imageAttribution": "Openverse: Haverkorrels Avena sativa - Rasbak",
+      "imageAttributionUrl": "https://commons.wikimedia.org/w/index.php?curid=183489"
+    },
+    {
+      "id": "bacalao",
+      "name": "Bacalao",
+      "family": "pescado",
+      "allergens": [
+        "pescado"
+      ],
+      "seedDescription": "El bacalao es un pescado blanco muy apreciado en la cocina española, especialmente en su versión salada y seca, utilizada en platos tradicionales como el bacalao al pil-pil.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Bacalao_al_Pil_Pil_%28Vizcaya%29.jpg",
+      "imageAttribution": "Wikipedia: Bacalao al pil pil",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Bacalao_al_pil_pil"
+    },
+    {
+      "id": "berenjena",
+      "name": "Berenjena",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "La berenjena es una verdura versátil de origen asiático, muy utilizada en platos como la ratatouille o la ensalada de berenjenas. Este contenido no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Alberginia_bonica.jpg/1280px-Alberginia_bonica.jpg",
+      "imageAttribution": "Wikipedia: Berenjena bonica",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Berenjena_bonica"
+    },
+    {
+      "id": "boniato",
+      "name": "Boniato",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "El boniato es una raíz dulce y nutritiva, rica en vitamina A y fibra. Este contenido no es consejo médico.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/Boniato%2C_tub%C3%A9rculo_%28Ipomoea_batatas%29.jpg",
+      "imageAttribution": "Wikimedia Commons",
+      "imageAttributionUrl": "https://upload.wikimedia.org"
+    },
+    {
+      "id": "brocoli",
+      "name": "Brocoli",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "El brócoli es una verdura rica en nutrientes y muy versátil en recetas infantiles. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/232/524608506_afdd7e3340_b.jpg",
+      "imageAttribution": "Openverse: Fleurette de brocoli et romanesco rôties, ail et coriandre - bloggyboulga",
+      "imageAttributionUrl": "https://www.flickr.com/photos/88183497@N00/524608506"
+    },
+    {
+      "id": "cacahuete",
+      "name": "Cacahuete",
+      "family": "frutos secos",
+      "allergens": [
+        "cacahuete"
+      ],
+      "seedDescription": "El cacahuete es una legumbre, no un fruto seco, y se utiliza en la elaboración de mantequilla de cacahuete y diversos productos alimentarios en todo el mundo.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/150000/velka/erdnusse-1452335267nYm.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "calabacin",
+      "name": "Calabacin",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "El calabacín, de la familia de las cucurbitáceas, es muy versátil en la cocina española, usándose en platos como la fritada o con sus flores rellenas. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/300000/velka/green-zucchini-1562757282SPL.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "calabaza",
+      "name": "Calabaza",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "La calabaza es una verdura versátil rica en betacaroteno, ideal para cremas y purés en la cocina infantil. Este contenido no sustituye el consejo médico.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/FrenchMarketPumpkinsB.jpg/1280px-FrenchMarketPumpkinsB.jpg",
+      "imageAttribution": "Wikipedia: Calabaza gigante",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Calabaza_gigante"
+    },
+    {
+      "id": "calamar",
+      "name": "Calamar",
+      "family": "marisco",
+      "allergens": [
+        "moluscos"
+      ],
+      "seedDescription": "El calamar es un marisco muy utilizado en la gastronomía española, especialmente en tapas como los anillos fritos. Curiosidad: su sangre es azul debido a la hemocianina.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/Calamares_tapas.jpg",
+      "imageAttribution": "Openverse: Calamares tapas - Flickr.com user 'deramaenrama'",
+      "imageAttributionUrl": "https://commons.wikimedia.org/w/index.php?curid=1383456"
+    },
+    {
+      "id": "canela",
+      "name": "Canela",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "La canela es un condimento obtenido de la corteza de árboles del género Cinnamomum, conocido por su aroma dulce y uso en postres. Este contenido es informativo y no sustituye la consulta con un profesional de la salud.",
+      "imageUrl": "https://live.staticflickr.com/4097/4860921496_1685156c3e_b.jpg",
+      "imageAttribution": "Openverse: Canela en rama, stick cinnamon. - Vvillamon",
+      "imageAttributionUrl": "https://www.flickr.com/photos/29059230@N00/4860921496"
+    },
+    {
+      "id": "cangrejo",
+      "name": "Cangrejo",
+      "family": "marisco",
+      "allergens": [
+        "crustaceos"
+      ],
+      "seedDescription": "El cangrejo es un marisco apreciado por su sabor suave y versatilidad culinaria. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Kanikama.jpg",
+      "imageAttribution": "Wikipedia: Palito de cangrejo",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Palito_de_cangrejo"
+    },
+    {
+      "id": "cebada",
+      "name": "Cebada",
+      "family": "cereales",
+      "allergens": [
+        "gluten"
+      ],
+      "seedDescription": "La cebada es un cereal tradicional en la cocina española, usado en sopas y bebidas como la cerveza. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Hordeum-barley.jpg",
+      "imageAttribution": "Wikipedia: Harina de cebada",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Harina_de_cebada"
+    },
+    {
+      "id": "cebolla",
+      "name": "Cebolla",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "Curiosidad: la cebolla se ha utilizado en la cocina desde la época romana. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Ceba_de_figueres_03.JPG/1280px-Ceba_de_figueres_03.JPG",
+      "imageAttribution": "Wikipedia: Cebolla de Figueras",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Cebolla_de_Figueras"
+    },
+    {
+      "id": "centeno",
+      "name": "Centeno",
+      "family": "cereales",
+      "allergens": [
+        "gluten"
+      ],
+      "seedDescription": "Centeno es un cereal tradicional en la cocina española, usado en panes oscuros como el pumpernickel. Curiosidad: es más resistente a climas fríos que otros cereales. No se proporcionan consejos médicos.",
+      "imageUrl": "https://live.staticflickr.com/3083/3171064012_c65910a9c5_b.jpg",
+      "imageAttribution": "Openverse: Pan de Centeno con Semillas - jlastras",
+      "imageAttributionUrl": "https://www.flickr.com/photos/22662305@N04/3171064012"
+    },
+    {
+      "id": "cerdo",
+      "name": "Cerdo",
+      "family": "carne",
+      "allergens": [],
+      "seedDescription": "El cerdo es una carne magra y versátil, sin alergenos, ideal para platos infantiles. Este contenido es informativo y no sustituye consejo médico.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Cerdo-Costillas.jpg/1280px-Cerdo-Costillas.jpg",
+      "imageAttribution": "Wikipedia: Chuleta de cerdo",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Chuleta_de_cerdo"
+    },
+    {
+      "id": "cerezas",
+      "name": "Cerezas",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "Las cerezas son frutas dulces y jugosas, ricas en antioxidantes. Este contenido es informativo y no sustituye consejo médico.",
+      "imageUrl": "https://live.staticflickr.com/4017/4664760506_25b48022c1_b.jpg",
+      "imageAttribution": "Openverse: Temporada de cerezas, cherry season. - Vvillamon",
+      "imageAttributionUrl": "https://www.flickr.com/photos/29059230@N00/4664760506"
+    },
+    {
+      "id": "champinones",
+      "name": "Champinones",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "Curiosidad: Los champiñones son hongos que crecen en la oscuridad y se usan en muchos platos por su sabor suave y textura jugosa. Este contenido no sustituye consejo médico.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/10000/velka/champinones-25761282883355uMO4.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "chia",
+      "name": "Chia",
+      "family": "semillas",
+      "allergens": [],
+      "seedDescription": "Chia es una semilla originaria de Mesoamérica, rica en fibra y omega-3, que forma un gel al hidratarse. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/2723/4177919755_a408016d5c_b.jpg",
+      "imageAttribution": "Openverse: Chia-Seeds-Presoak-9510 - graibeard",
+      "imageAttributionUrl": "https://www.flickr.com/photos/8393288@N04/4177919755"
+    },
+    {
+      "id": "ciruela",
+      "name": "Ciruela",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La ciruela es una fruta jugosa y dulce, originaria de Asia, muy popular en España. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Plum_on_tree02.jpg/1280px-Plum_on_tree02.jpg",
+      "imageAttribution": "Wikipedia: Ciruela",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Ciruela"
+    },
+    {
+      "id": "coliflor",
+      "name": "Coliflor",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "La coliflor es una verdura versátil perteneciente a la familia de las crucíferas, conocida por su uso en dietas bajas en carbohidratos como sustituto del arroz. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/8473/8138142347_0727123284_b.jpg",
+      "imageAttribution": "Openverse: Coliflor | 121023-0427-jikatu - jikatu",
+      "imageAttributionUrl": "https://www.flickr.com/photos/7221539@N06/8138142347"
+    },
+    {
+      "id": "comino",
+      "name": "Comino",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "El comino es una especia originaria de Oriente Medio, muy utilizada en la cocina mediterránea y en platos tradicionales como guisos y sopas españolas. Este contenido es solo informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/210000/velka/ziarna-czarnuszki-nigella-sativa.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "conejo",
+      "name": "Conejo",
+      "family": "carne",
+      "allergens": [],
+      "seedDescription": "El conejo es una carne magra y rica en proteínas, considerada libre de alergenos comunes, y popular en recetas tradicionales como el 'conejo al ajillo'. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Oryctolagus_cuniculus_%28conejo%29.jpg",
+      "imageAttribution": "Wikipedia: Conejo rex",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Conejo_rex"
+    },
+    {
+      "id": "cordero",
+      "name": "Cordero",
+      "family": "carne",
+      "allergens": [],
+      "seedDescription": "El cordero es una carne magra rica en proteínas y hierro, muy apreciada en platos tradicionales como el lechazo asado. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Cordero_asado.JPG/1280px-Cordero_asado.JPG",
+      "imageAttribution": "Wikipedia: Cordero a la pastora",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Cordero_a_la_pastora"
+    },
+    {
+      "id": "cuscus",
+      "name": "Cuscus",
+      "family": "cereales",
+      "allergens": [
+        "gluten"
+      ],
+      "seedDescription": "El cuscús es un cereal tradicional del norte de África elaborado con sémola de trigo. Este contenido es solo informativo y no sustituye consejo médico.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Couscous-01.jpg",
+      "imageAttribution": "Wikimedia Commons",
+      "imageAttributionUrl": "https://upload.wikimedia.org"
+    },
+    {
+      "id": "dorada",
+      "name": "Dorada",
+      "family": "pescado",
+      "allergens": [
+        "pescado"
+      ],
+      "seedDescription": "La dorada es un pescado blanco muy apreciado en la cocina mediterránea. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://c.pxhere.com/photos/e0/d9/photo-1618235.jpg!d",
+      "imageAttribution": "Fuente: c.pxhere.com",
+      "imageAttributionUrl": "https://c.pxhere.com"
+    },
+    {
+      "id": "esparragos",
+      "name": "Esparragos",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "Los espárragos son una verdura primaveral con sabor suave y textura tierna, muy apreciados en la cocina mediterránea. ¡Curiosidad! Los espárragos blancos se cultivan bajo tierra para evitar la fotosíntesis, lo que les da su color pálido. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/3219/2690749144_4f5d3c2e79_b.jpg",
+      "imageAttribution": "Openverse: Espárragos Trigueros a la Plancha - jlastras",
+      "imageAttributionUrl": "https://www.flickr.com/photos/22662305@N04/2690749144"
+    },
+    {
+      "id": "espinacas",
+      "name": "Espinacas",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "Las espinacas son una verdura de hoja verde rica en hierro y vitaminas. Aunque la leyenda de Popeye las asoció a fuerza sobrehumana, su contenido de hierro fue malinterpretado en el pasado.",
+      "imageUrl": "https://live.staticflickr.com/7144/6420373241_5fc64f055b_b.jpg",
+      "imageAttribution": "Openverse: Espinacas - Herbolario Allium: www.alliumherbal.com",
+      "imageAttributionUrl": "https://www.flickr.com/photos/54272800@N04/6420373241"
+    },
+    {
+      "id": "frambuesas",
+      "name": "Frambuesas",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "Las frambuesas son frutas rojas brillantes con sabor dulce-ácido, formadas por cientos de drupéolas. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Raspberries_%28Rubus_idaeus%29.jpg/1280px-Raspberries_%28Rubus_idaeus%29.jpg",
+      "imageAttribution": "Wikipedia: Frambuesa (color)",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Frambuesa_(color)"
+    },
+    {
+      "id": "fresas",
+      "name": "Fresas",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "Las fresas son la única fruta con semillas en la superficie, lo que las hace únicas. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/3019/2580344111_c467711ec3_b.jpg",
+      "imageAttribution": "Openverse: Fresas - El Tabernero",
+      "imageAttributionUrl": "https://www.flickr.com/photos/8641890@N05/2580344111"
+    },
+    {
+      "id": "gambas",
+      "name": "Gambas",
+      "family": "marisco",
+      "allergens": [
+        "crustaceos"
+      ],
+      "seedDescription": "Las gambas son un marisco popular, rico en proteínas y con un sabor dulce. Curiosidad: su color rosado al cocinar se debe a una proteína llamada astaxantina.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Gambas_rojas.jpg",
+      "imageAttribution": "Wikipedia: Gambas a la plancha",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Gambas_a_la_plancha"
+    },
+    {
+      "id": "garbanzos",
+      "name": "Garbanzos",
+      "family": "legumbres",
+      "allergens": [],
+      "seedDescription": "Los garbanzos son una legumbre nutritiva rica en proteínas y fibra, esencial en platos como la ensalada de garbanzos. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://live.staticflickr.com/2658/4104533802_3d1c360a3e_b.jpg",
+      "imageAttribution": "Openverse: rinsed, drained garbanzo beans - Joelk75",
+      "imageAttributionUrl": "https://www.flickr.com/photos/75001512@N00/4104533802"
+    },
+    {
+      "id": "granada",
+      "name": "Granada",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La granada, originaria de Persia, es conocida por sus semillas rojas jugosas llamadas arilos, muy apreciadas en la gastronomía mediterránea. Este contenido no sustituye el asesoramiento médico profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/210000/velka/czerwony-granat-owoc.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "guisantes",
+      "name": "Guisantes",
+      "family": "legumbres",
+      "allergens": [],
+      "seedDescription": "Los guisantes son legumbres dulces y nutritivas, ideales para niños, y libres de los alérgenos más comunes. Este contenido es informativo y no sustituye el consejo de un profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/30000/velka/green-peas-background.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "habas",
+      "name": "Habas",
+      "family": "legumbres",
+      "allergens": [],
+      "seedDescription": "Las habas son una de las legumbres más antiguas cultivadas por el ser humano, con un sabor dulce y tierno cuando están jóvenes. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/300000/velka/fresh-green-beans-in-basket.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "huevo",
+      "name": "Huevo",
+      "family": "huevo",
+      "allergens": [
+        "huevo"
+      ],
+      "seedDescription": "El huevo es un alimento versátil y nutritivo, ampliamente utilizado en la cocina española. Curiosidad: Es uno de los alimentos más antiguos consumidos por humanos.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Eggs_in_basket_2020_G1.jpg/1280px-Eggs_in_basket_2020_G1.jpg",
+      "imageAttribution": "Wikipedia: Huevo (alimento)",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Huevo_(alimento)"
+    },
+    {
+      "id": "jamon",
+      "name": "Jamon",
+      "family": "carne",
+      "allergens": [],
+      "seedDescription": "El jamón es un embutido tradicional español elaborado con pata de cerdo curada, con una larga historia culinaria. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/SIM%C3%93N_MART%C3%8DN_GUIJUELO.JPG/1280px-SIM%C3%93N_MART%C3%8DN_GUIJUELO.JPG",
+      "imageAttribution": "Wikipedia: Jamón serrano",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Jam%C3%B3n_serrano"
+    },
+    {
+      "id": "judias_blancas",
+      "name": "Judias blancas",
+      "family": "legumbres",
+      "allergens": [],
+      "seedDescription": "Las judías blancas, legumbres ricas en proteínas y fibra, se usaban como moneda en la antigua Roma. Este contenido no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://live.staticflickr.com/7550/15662447863_2fa66064c1_b.jpg",
+      "imageAttribution": "Openverse: Judias blancas - Herbolario Allium: www.alliumherbal.com",
+      "imageAttributionUrl": "https://www.flickr.com/photos/54272800@N04/15662447863"
+    },
+    {
+      "id": "judias_verdes",
+      "name": "Judias verdes",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "Las judías verdes son una verdura versátil y rica en fibra, ideal para platos infantiles. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/6231/6337385926_402c3bb7ea_b.jpg",
+      "imageAttribution": "Openverse: Judias Verdes - Herbolario Allium: www.alliumherbal.com",
+      "imageAttributionUrl": "https://www.flickr.com/photos/54272800@N04/6337385926"
+    },
+    {
+      "id": "kefir",
+      "name": "Kefir",
+      "family": "lacteos",
+      "allergens": [
+        "leche"
+      ],
+      "seedDescription": "El kefir es una bebida láctea fermentada rica en probióticos, originaria del Cáucaso. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/4077/4760684737_40f1b03070_m.jpg",
+      "imageAttribution": "Openverse: Milk Kefir Grains - HealthHomeHappy.com",
+      "imageAttributionUrl": "https://www.flickr.com/photos/39794839@N03/4760684737"
+    },
+    {
+      "id": "kiwi",
+      "name": "Kiwi",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "El kiwi es una fruta exótica rica en vitamina C y fibra. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/5162/5317566258_0e044390fc_b.jpg",
+      "imageAttribution": "Openverse: Kiwi Slices - Dan4th",
+      "imageAttributionUrl": "https://www.flickr.com/photos/43264265@N00/5317566258"
+    },
+    {
+      "id": "langosta",
+      "name": "Langosta",
+      "family": "marisco",
+      "allergens": [
+        "crustaceos"
+      ],
+      "seedDescription": "La langosta es un crustáceo marino valorado por su sabor dulce y textura firme. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/3491/3878872848_5be0bd055f_b.jpg",
+      "imageAttribution": "Openverse: Langosta al ajillo con patacones y aguacate - Rinaldo Wurglitsch",
+      "imageAttributionUrl": "https://www.flickr.com/photos/16448758@N03/3878872848"
+    },
+    {
+      "id": "leche",
+      "name": "Leche",
+      "family": "lacteos",
+      "allergens": [
+        "leche"
+      ],
+      "seedDescription": "La leche es un alimento tradicional en la dieta infantil, utilizado en recetas como natillas, flanes o batidos. Este contenido es informativo y no sustituye el consejo de un profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Milk_glass.jpg",
+      "imageAttribution": "Wikipedia: Leche",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Leche"
+    },
+    {
+      "id": "lechuga",
+      "name": "Lechuga",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "La lechuga es una verdura esencial en ensaladas españolas, conocida por su alto contenido de agua y su bajo aporte calórico. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/5521/9682527261_241d523047_b.jpg",
+      "imageAttribution": "Openverse: Plantones de lechuga * Lactuca sativa - jacilluch",
+      "imageAttributionUrl": "https://www.flickr.com/photos/70626035@N00/9682527261"
+    },
+    {
+      "id": "lentejas",
+      "name": "Lentejas",
+      "family": "legumbres",
+      "allergens": [],
+      "seedDescription": "Las lentejas son una legumbre rica en proteínas y hierro, muy utilizadas en platos tradicionales españoles como las lentejas estofadas. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://live.staticflickr.com/4129/5094766956_0549d662c2.jpg",
+      "imageAttribution": "Openverse: Lentejas veganas / Vegan black lentils - Lablascovegmenu",
+      "imageAttributionUrl": "https://www.flickr.com/photos/35022955@N06/5094766956"
+    },
+    {
+      "id": "limon",
+      "name": "Limon",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "El limón es una fruta cítrica rica en vitamina C, ideal para añadir frescura a jugos y postres. Este contenido es informativo y no sustituye el consejo de un profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/160000/velka/fresh-lemons-1456946928Fn8.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "linaza",
+      "name": "Linaza",
+      "family": "semillas",
+      "allergens": [],
+      "seedDescription": "La linaza es rica en omega-3 y fibra, ideal en pequeñas cantidades para papillas infantiles. Este contenido es informativo y no sustituye el asesoramiento de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Flax_seeds.jpg",
+      "imageAttribution": "Wikipedia: Linaza",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Linaza"
+    },
+    {
+      "id": "lubina",
+      "name": "Lubina",
+      "family": "pescado",
+      "allergens": [
+        "pescado"
+      ],
+      "seedDescription": "La lubina es un pescado blanco de sabor suave y textura firme, muy apreciado en la cocina mediterránea. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/3194/2663754320_bfe3a9be13_b.jpg",
+      "imageAttribution": "Openverse: Lubina a la plancha - jlastras",
+      "imageAttributionUrl": "https://www.flickr.com/photos/22662305@N04/2663754320"
+    },
+    {
+      "id": "maiz",
+      "name": "Maiz",
+      "family": "cereales",
+      "allergens": [],
+      "seedDescription": "El maíz es un cereal versátil, frecuente en papillas infantiles y snacks, con un sabor dulce que atrae a los niños. Este contenido no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/VegCorn.jpg",
+      "imageAttribution": "Wikipedia: Maíz dulce",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Ma%C3%ADz_dulce"
+    },
+    {
+      "id": "mandarina",
+      "name": "Mandarina",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La mandarina es una fruta cítrica fácil de pelar, ideal para meriendas infantiles por su sabor dulce y tamaño pequeño. Este contenido no sustituye el consejo médico.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/250000/velka/tangerines-for-sale.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "mango",
+      "name": "Mango",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "El mango, conocido como 'el rey de las frutas', es una fruta tropical originaria de Asia con un sabor dulce y un color vibrante que varía desde amarillo hasta rojo. Este contenido no sustituye consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Carabao_mangoes_%28Philippines%29.jpg/1280px-Carabao_mangoes_%28Philippines%29.jpg",
+      "imageAttribution": "Wikipedia: Mango Carabao",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Mango_Carabao"
+    },
+    {
+      "id": "mantequilla",
+      "name": "Mantequilla",
+      "family": "lacteos",
+      "allergens": [
+        "leche"
+      ],
+      "seedDescription": "La mantequilla se obtiene de la crema de leche y es un ingrediente clave en repostería y cocina tradicional. Este contenido es informativo y no sustituye consejo médico.",
+      "imageUrl": "https://c.pxhere.com/photos/45/d3/Baking_Butter_Butters_Foods_Ingredients-1615821.jpg!d",
+      "imageAttribution": "Fuente: c.pxhere.com",
+      "imageAttributionUrl": "https://c.pxhere.com"
+    },
+    {
+      "id": "manzana",
+      "name": "Manzana",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La manzana es originaria de Asia Central y se cultiva en más de 7.000 variedades en todo el mundo. Este contenido es informativo y no sustituye la consulta con un profesional de la salud.",
+      "imageUrl": "https://live.staticflickr.com/4095/4806455421_61754650c5_b.jpg",
+      "imageAttribution": "Openverse: MANZANAS - LALO VAZQUEZ",
+      "imageAttributionUrl": "https://www.flickr.com/photos/30993853@N06/4806455421"
+    },
+    {
+      "id": "mejillones",
+      "name": "Mejillones",
+      "family": "marisco",
+      "allergens": [
+        "moluscos"
+      ],
+      "seedDescription": "Los mejillones son mariscos bivalvos ricos en proteínas y minerales, muy utilizados en platos tradicionales como la zarzuela. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/3516/3258458459_8eed9ed450_b.jpg",
+      "imageAttribution": "Openverse: Mejillones en Escabeche - jlastras",
+      "imageAttributionUrl": "https://www.flickr.com/photos/22662305@N04/3258458459"
+    },
+    {
+      "id": "melocoton",
+      "name": "Melocoton",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "El melocotón es una fruta jugosa y dulce, muy apreciada en verano. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/72/185669057_c0513b8b3b.jpg",
+      "imageAttribution": "Openverse: Melocotones de la Boquería - arantxamex",
+      "imageAttributionUrl": "https://www.flickr.com/photos/96051197@N00/185669057"
+    },
+    {
+      "id": "melon",
+      "name": "Melon",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "El melón es una fruta refrescante y jugosa, rica en agua y vitaminas, perteneciente a la familia de las cucurbitáceas como pepinos y calabazas. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Santaclaus_melon.jpg",
+      "imageAttribution": "Wikimedia Commons",
+      "imageAttributionUrl": "https://upload.wikimedia.org"
+    },
+    {
+      "id": "merluza",
+      "name": "Merluza",
+      "family": "pescado",
+      "allergens": [
+        "pescado"
+      ],
+      "seedDescription": "La merluza es un pescado blanco muy apreciado en la cocina española, especialmente en platos como la merluza a la vasca. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/2380/2418742297_5f2b3447e7_b.jpg",
+      "imageAttribution": "Openverse: Marcando los trozos de Cola de Merluza - jlastras",
+      "imageAttributionUrl": "https://www.flickr.com/photos/22662305@N04/2418742297"
+    },
+    {
+      "id": "mostaza",
+      "name": "Mostaza",
+      "family": "condimentos",
+      "allergens": [
+        "mostaza"
+      ],
+      "seedDescription": "La mostaza se elabora con semillas molidas y líquido, como vinagre, y se ha usado desde la antigüedad. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Creole_Mustard.jpg",
+      "imageAttribution": "Wikipedia: Mostaza criolla",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Mostaza_criolla"
+    },
+    {
+      "id": "naranja",
+      "name": "Naranja",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La naranja es una fruta cítrica originaria de Asia, muy rica en vitamina C. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/5183/5579144958_320fdb367e_b.jpg",
+      "imageAttribution": "Openverse: 1962-Naranjas - jl.cernadas",
+      "imageAttributionUrl": "https://www.flickr.com/photos/38035878@N07/5579144958"
+    },
+    {
+      "id": "nueces",
+      "name": "Nueces",
+      "family": "frutos secos",
+      "allergens": [
+        "frutos_secos"
+      ],
+      "seedDescription": "Las nueces son frutos secos ricos en nutrientes y antioxidantes, ideales para snacks saludables. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/280000/velka/walnuts-background-1542124903GmT.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "nuez_pecana",
+      "name": "Nuez pecana",
+      "family": "frutos secos",
+      "allergens": [
+        "frutos_secos"
+      ],
+      "seedDescription": "La nuez pecana es originaria de América del Norte y muy popular en postres como la tarta de pecán. Este contenido no sustituye el asesoramiento médico.",
+      "imageUrl": "https://live.staticflickr.com/8232/8589605005_3ac943ec68_b.jpg",
+      "imageAttribution": "Openverse: Nuez pecana - Herbolario Allium: www.alliumherbal.com",
+      "imageAttributionUrl": "https://www.flickr.com/photos/54272800@N04/8589605005"
+    },
+    {
+      "id": "oregano",
+      "name": "Oregano",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "El orégano es una hierba aromática originaria del Mediterráneo, muy utilizada en la cocina española para dar sabor a platos como pizzas, pastas y salsas de tomate. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/3156/2565214027_be04e10955_b.jpg",
+      "imageAttribution": "Openverse: Oregano - Joi",
+      "imageAttributionUrl": "https://www.flickr.com/photos/35034362831@N01/2565214027"
+    },
+    {
+      "id": "pan_trigo",
+      "name": "Pan (trigo)",
+      "family": "cereales",
+      "allergens": [
+        "gluten"
+      ],
+      "seedDescription": "El pan de trigo es un alimento básico en la dieta mediterránea desde la antigüedad, conocido por su versatilidad en recetas tradicionales. Este contenido no sustituye el asesoramiento médico profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/220000/velka/chleb-bochenki-chleba-1493573247kMy.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "papaya",
+      "name": "Papaya",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La papaya es una fruta tropical dulce y jugosa, rica en vitamina C y enzimas que ayudan a la digestión. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://live.staticflickr.com/2564/4229124857_1b03ba3f39_b.jpg",
+      "imageAttribution": "Openverse: papayas - Chasqui (Luis Tamayo)",
+      "imageAttributionUrl": "https://www.flickr.com/photos/77887212@N00/4229124857"
+    },
+    {
+      "id": "pasta",
+      "name": "Pasta",
+      "family": "cereales",
+      "allergens": [
+        "gluten"
+      ],
+      "seedDescription": "La pasta, elaborada con harina de trigo, es un alimento básico en muchas cocinas. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg/1280px-%28Pasta%29_by_David_Adam_Kess_%28pic.2%29.jpg",
+      "imageAttribution": "Wikipedia: Pasta",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Pasta"
+    },
+    {
+      "id": "patata",
+      "name": "Patata",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "La patata es un alimento versátil y nutritivo, ideal para bebés por su textura suave. Este contenido es solo informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Kartoffeln_der_Sorte_Marabel.JPG/1280px-Kartoffeln_der_Sorte_Marabel.JPG",
+      "imageAttribution": "Wikipedia: Patata de Prades",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Patata_de_Prades"
+    },
+    {
+      "id": "pavo",
+      "name": "Pavo",
+      "family": "carne",
+      "allergens": [],
+      "seedDescription": "El pavo es una carne magra y versátil, ideal para menús infantiles. Este contenido es informativo y no sustituye el consejo médico.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/USMC-091126-M-9613D-005.jpg/1280px-USMC-091126-M-9613D-005.jpg",
+      "imageAttribution": "Wikipedia: Pavo de Nochebuena",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Pavo_de_Nochebuena"
+    },
+    {
+      "id": "pepino",
+      "name": "Pepino",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "El pepino es una verdura refrescante y rica en agua, esencial en el gazpacho andaluz. Nota: Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/50000/velka/green-cucumber-in-the-basket.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "pera",
+      "name": "Pera",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La pera es una fruta jugosa y dulce, ideal para meriendas saludables. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Konference_hru%C5%A1e%C5%88_%28Conference_paer%29.jpg/1280px-Konference_hru%C5%A1e%C5%88_%28Conference_paer%29.jpg",
+      "imageAttribution": "Wikipedia: Conference (pera)",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Conference_(pera)"
+    },
+    {
+      "id": "perejil",
+      "name": "Perejil",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "El perejil es una hierba fresca muy utilizada en la cocina española, especialmente como guarnición o en salsas como el alioli. Curiosidad: se cree que era considerado sagrado en la antigua Grecia y se usaba en coronas para los ganadores de los juegos olímpicos.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/40000/velka/flat-leaf-parsley.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "pimenton",
+      "name": "Pimenton",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "El pimentón es un condimento hecho de pimientos secos y molidos, muy usado en la cocina española. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Pimenton-ahumado-candeleda.jpg/1280px-Pimenton-ahumado-candeleda.jpg",
+      "imageAttribution": "Wikipedia: Pimentón de la Vera",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Piment%C3%B3n_de_la_Vera"
+    },
+    {
+      "id": "pimiento_rojo",
+      "name": "Pimiento rojo",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "El pimiento rojo es una verdura dulce y colorida, más rica en vitamina C que una naranja. Curiosidad: su alto contenido de antioxidantes ayuda a fortalecer el sistema inmunitario.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/260000/velka/red-bell-peppers.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "pimiento-verde",
+      "name": "Pimiento verde",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "El pimiento verde es una verdura rica en vitamina C y aporta colorido a los platos. Este contenido no sustituye consejo médico.",
+      "imageUrl": "https://live.staticflickr.com/4064/4334721739_c9e09457f5_b.jpg",
+      "imageAttribution": "Openverse: Pimientos Verdes - jlastras",
+      "imageAttributionUrl": "https://www.flickr.com/photos/22662305@N04/4334721739"
+    },
+    {
+      "id": "pina",
+      "name": "Piña",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La piña es una fruta tropical originaria de América del Sur, conocida por su sabor dulce y ácido y su alto contenido en vitamina C. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/4085/5045051682_b191050dc7_b.jpg",
+      "imageAttribution": "Openverse: Piñas tropicales.“Gran Canaria, Un Mercado Único” - El Coleccionista de Instantes",
+      "imageAttributionUrl": "https://www.flickr.com/photos/31195974@N05/5045051682"
+    },
+    {
+      "id": "pistacho",
+      "name": "Pistacho",
+      "family": "frutos secos",
+      "allergens": [
+        "frutos_secos"
+      ],
+      "seedDescription": "El pistacho es un fruto seco con cáscara que se abre naturalmente y un color verde característico. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/3122/3123639244_26d4bc6ed4_b.jpg",
+      "imageAttribution": "Openverse: Pistachos - Eduardo Mueses",
+      "imageAttributionUrl": "https://www.flickr.com/photos/38692570@N00/3123639244"
+    },
+    {
+      "id": "platano",
+      "name": "Platano",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "El plátano es una fruta rica en energía y muy popular entre los niños por su sabor dulce y textura suave. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Platano_de_canarias.jpg",
+      "imageAttribution": "Wikipedia: Plátano de Canarias",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Pl%C3%A1tano_de_Canarias"
+    },
+    {
+      "id": "pollo",
+      "name": "Pollo",
+      "family": "carne",
+      "allergens": [],
+      "seedDescription": "El pollo es una carne blanca muy versátil y rica en proteínas. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Max%27s_Roasted_Chicken_-_Evan_Swigart.jpg/1280px-Max%27s_Roasted_Chicken_-_Evan_Swigart.jpg",
+      "imageAttribution": "Wikipedia: Pollo asado",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Pollo_asado"
+    },
+    {
+      "id": "puerro",
+      "name": "Puerro",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "El puerro es una verdura del género Allium, con sabor suave y versátil, y naturalmente libre de los principales alérgenos alimentarios. Este contenido es informativo y no sustituye el consejo médico.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/110000/velka/crop-of-home-grown-leeks.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "pulpo",
+      "name": "Pulpo",
+      "family": "marisco",
+      "allergens": [
+        "moluscos"
+      ],
+      "seedDescription": "El pulpo es un marisco popular en la cocina mediterránea, cocinado a la parrilla o en ensaladas. Este contenido es informativo y no sustituye el consejo médico.",
+      "imageUrl": "https://live.staticflickr.com/3214/2813384523_393c33e5df_b.jpg",
+      "imageAttribution": "Openverse: Tentáculos de Pulpo a la Plancha - jlastras",
+      "imageAttributionUrl": "https://www.flickr.com/photos/22662305@N04/2813384523"
+    },
+    {
+      "id": "queso",
+      "name": "Queso fresco",
+      "family": "lacteos",
+      "allergens": [
+        "leche"
+      ],
+      "seedDescription": "Queso fresco es un lácteo suave y versátil, ideal para snacks o en ensaladas. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/%C3%87erkes_peyniri_from_Turkey.jpg/1280px-%C3%87erkes_peyniri_from_Turkey.jpg",
+      "imageAttribution": "Wikipedia: Queso fresco",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Queso_fresco"
+    },
+    {
+      "id": "quinoa",
+      "name": "Quinoa",
+      "family": "cereales",
+      "allergens": [],
+      "seedDescription": "La quinoa, una semilla originaria de los Andes, es rica en proteínas y libre de gluten, ideal para la alimentación infantil. Este contenido no sustituye el consejo médico.",
+      "imageUrl": "https://live.staticflickr.com/2784/4229898548_ed5dcbc9dc_b.jpg",
+      "imageAttribution": "Openverse: Quinoa - Chasqui (Luis Tamayo)",
+      "imageAttributionUrl": "https://www.flickr.com/photos/77887212@N00/4229898548"
+    },
+    {
+      "id": "remolacha",
+      "name": "Remolacha",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "La remolacha es una verdura rica en betalainas, que le dan su color rojo intenso. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/160000/velka/farmers-market-fresh-beets.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "requeson",
+      "name": "Requeson",
+      "family": "lacteos",
+      "allergens": [
+        "leche"
+      ],
+      "seedDescription": "Requesón es un queso fresco elaborado a partir de suero de leche, muy utilizado en postres y como acompañamiento en la cocina española. Este contenido no sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Ricotta_pugliese.jpg/1280px-Ricotta_pugliese.jpg",
+      "imageAttribution": "Wikipedia: Requesón",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Reques%C3%B3n"
+    },
+    {
+      "id": "sal",
+      "name": "Sal",
+      "family": "condimentos",
+      "allergens": [],
+      "seedDescription": "La sal es un condimento esencial desde la antigüedad para realzar sabores y preservar alimentos. Este contenido no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Table_salt_with_salt_shaker_V1.jpg/1280px-Table_salt_with_salt_shaker_V1.jpg",
+      "imageAttribution": "Wikipedia: Sal común",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Sal_com%C3%BAn"
+    },
+    {
+      "id": "salmon",
+      "name": "Salmon",
+      "family": "pescado",
+      "allergens": [
+        "pescado"
+      ],
+      "seedDescription": "El salmón es un pescado azul rico en omega-3, ideal para el desarrollo cerebral. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://live.staticflickr.com/4116/4806852124_e06572590a_b.jpg",
+      "imageAttribution": "Openverse: Salmon Dinner-2 - gkdavie",
+      "imageAttributionUrl": "https://www.flickr.com/photos/16034871@N05/4806852124"
+    },
+    {
+      "id": "sandia",
+      "name": "Sandia",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "La sandía es una fruta refrescante con un 92% de agua, ideal para hidratarse en verano. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/260000/velka/watermelon-1528646826Kyo.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "sardina",
+      "name": "Sardina",
+      "family": "pescado",
+      "allergens": [
+        "pescado"
+      ],
+      "seedDescription": "La sardina es un pescado azul muy popular en la dieta mediterránea, rico en omega-3 y consumido habitualmente a la plancha o en conserva.",
+      "imageUrl": "https://live.staticflickr.com/36/75614391_a8a1c50bc7_b.jpg",
+      "imageAttribution": "Openverse: Sardinas - FreeCat",
+      "imageAttributionUrl": "https://www.flickr.com/photos/17364971@N00/75614391"
+    },
+    {
+      "id": "sesamo",
+      "name": "Sesamo",
+      "family": "semillas",
+      "allergens": [
+        "sesamo"
+      ],
+      "seedDescription": "El sésamo es una semilla muy utilizada en la cocina, con un sabor tostado y versátil en recetas como panes o salsas. Este contenido es informativo y no sustituye el consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/2228/2121440568_f125f6b0a5_b.jpg",
+      "imageAttribution": "Openverse: Aliméntame Sesamo - diegogers",
+      "imageAttributionUrl": "https://www.flickr.com/photos/75376314@N00/2121440568"
+    },
+    {
+      "id": "soja_edamame",
+      "name": "Soja (edamame)",
+      "family": "legumbres",
+      "allergens": [
+        "soja"
+      ],
+      "seedDescription": "Edamame son judías de soja jóvenes y tiernas, muy populares en la cocina asiática. Este contenido es informativo y no sustituye la consulta médica.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Edamame_by_mdid.jpg",
+      "imageAttribution": "Wikimedia Commons",
+      "imageAttributionUrl": "https://upload.wikimedia.org"
+    },
+    {
+      "id": "ternera",
+      "name": "Ternera",
+      "family": "carne",
+      "allergens": [],
+      "seedDescription": "La ternera es una carne joven y tierna, muy apreciada en la cocina española por su sabor suave y versatilidad. No sustituye el consejo médico profesional.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Prime.jpg",
+      "imageAttribution": "Wikipedia: Carne de ternera",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Carne_de_ternera"
+    },
+    {
+      "id": "tofu",
+      "name": "Tofu",
+      "family": "legumbres",
+      "allergens": [
+        "soja"
+      ],
+      "seedDescription": "Tofu es un alimento elaborado a partir de la leche de soja, originario de Asia, rico en proteínas y versátil en cocinas. No es consejo médico.",
+      "imageUrl": "https://www.publicdomainpictures.net/pictures/70000/velka/bulk-tofu.jpg",
+      "imageAttribution": "Fuente: www.publicdomainpictures.net",
+      "imageAttributionUrl": "https://www.publicdomainpictures.net"
+    },
+    {
+      "id": "tomate",
+      "name": "Tomate",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "El tomate, aunque clasificado como verdura, es botánicamente una baya. Este contenido no sustituye consejo médico profesional.",
+      "imageUrl": "https://live.staticflickr.com/6199/6052874919_b2e9ac06c1_b.jpg",
+      "imageAttribution": "Openverse: Tomate / Tomato - Skley",
+      "imageAttributionUrl": "https://www.flickr.com/photos/49842283@N04/6052874919"
+    },
+    {
+      "id": "trigo",
+      "name": "Trigo",
+      "family": "cereales",
+      "allergens": [
+        "gluten"
+      ],
+      "seedDescription": "El trigo es un cereal fundamental en la dieta mediterránea, base de alimentos como pan, pasta y galletas desde la antigüedad.",
+      "imageUrl": "https://live.staticflickr.com/3528/3723943242_83a2be8a96_b.jpg",
+      "imageAttribution": "Openverse: Trigo I - Xuanxu",
+      "imageAttributionUrl": "https://www.flickr.com/photos/58021316@N00/3723943242"
+    },
+    {
+      "id": "trucha",
+      "name": "Trucha",
+      "family": "pescado",
+      "allergens": [
+        "pescado"
+      ],
+      "seedDescription": "La trucha es un pescado de agua dulce muy apreciado en la cocina española, ideal para platos suaves y nutritivos. Este contenido no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Bachforelle_Zeichnung.jpg",
+      "imageAttribution": "Wikipedia: Trucha",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Trucha"
+    },
+    {
+      "id": "uvas",
+      "name": "Uvas",
+      "family": "fruta",
+      "allergens": [],
+      "seedDescription": "Las uvas son frutas dulces y jugosas, ricas en antioxidantes y una de las frutas más antiguas cultivadas por el ser humano. Este contenido es informativo y no sustituye el consejo médico.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Uva_pisquera-Chile.jpg",
+      "imageAttribution": "Wikipedia: Crisis de las uvas chilenas de 1989",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Crisis_de_las_uvas_chilenas_de_1989"
+    },
+    {
+      "id": "yema",
+      "name": "Yema",
+      "family": "huevo",
+      "allergens": [
+        "huevo"
+      ],
+      "seedDescription": "La yema es la parte rica en nutrientes del huevo, conocida por su color amarillo intenso y uso en recetas como mayonesa o postres. Este contenido es informativo y no sustituye el consejo médico.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Yemas.JPG/1280px-Yemas.JPG",
+      "imageAttribution": "Wikipedia: Yema de huevo",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Yema_de_huevo"
+    },
+    {
+      "id": "yogur",
+      "name": "Yogur natural",
+      "family": "lacteos",
+      "allergens": [
+        "leche"
+      ],
+      "seedDescription": "El yogur natural es un producto lácteo fermentado rico en probióticos y calcio, ideal para la alimentación infantil. Este contenido es informativo y no sustituye el consejo de un profesional de la salud.",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Turkish_strained_yogurt.jpg",
+      "imageAttribution": "Wikimedia Commons: Turkish strained yogurt",
+      "imageAttributionUrl": "https://upload.wikimedia.org"
+    },
+    {
+      "id": "zanahoria",
+      "name": "Zanahoria",
+      "family": "verduras",
+      "allergens": [],
+      "seedDescription": "Un alimento suave y versatil llamado Zanahoria, ideal para introducir en pequenas porciones y observar la tolerancia.",
+      "imageUrl": "https://live.staticflickr.com/22/35819369_3dfa63642b_b.jpg",
+      "imageAttribution": "Openverse: Carrots - Carota - Wortels - Geze - 胡萝卜- zanahoria - carotte - ニンジン - color line",
+      "imageAttributionUrl": "https://www.flickr.com/photos/36131061@N00/35819369"
+    }
+  ],
+  "families": [
+    {
+      "family": "carne",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/FoodMeat.jpg/1280px-FoodMeat.jpg",
+      "imageAttribution": "Wikipedia: Carne",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Carne"
+    },
+    {
+      "family": "verduras",
+      "imageUrl": "https://live.staticflickr.com/4111/5044427985_9cd77d01ae_b.jpg",
+      "imageAttribution": "Openverse: Verduras.“Gran Canaria, Un Mercado Único” - El Coleccionista de Instantes",
+      "imageAttributionUrl": "https://www.flickr.com/photos/31195974@N05/5044427985"
+    },
+    {
+      "family": "fruta",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Fruit_Stall_in_Barcelona_Market.jpg/1280px-Fruit_Stall_in_Barcelona_Market.jpg",
+      "imageAttribution": "Wikipedia: Fruta",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Fruta"
+    },
+    {
+      "family": "cereales",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Various_grains.jpg/1280px-Various_grains.jpg",
+      "imageAttribution": "Wikipedia: Cereal",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Cereal"
+    },
+    {
+      "family": "legumbres",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/3_types_of_lentil.jpg/1280px-3_types_of_lentil.jpg",
+      "imageAttribution": "Wikipedia: Legumbre",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Legumbre"
+    },
+    {
+      "family": "huevo",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Eggs_in_basket_2020_G1.jpg/1280px-Eggs_in_basket_2020_G1.jpg",
+      "imageAttribution": "Wikipedia: Huevo (alimento)",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Huevo_(alimento)"
+    },
+    {
+      "family": "lacteos",
+      "imageUrl": "https://img.freepik.com/foto-gratis/productos-lacteos_114579-8756.jpg?t=st=1770554960~exp=1770558560~hmac=3c24dfdd0ffebf5db7a65a69566c171c7982f94e6c2901468e33e5102e1cd33a&w=1480",
+      "imageAttribution": "Fuente: img.freepik.com (productos lacteos 114579 8756)",
+      "imageAttributionUrl": "https://img.freepik.com"
+    },
+    {
+      "family": "frutos secos",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Mixed_nuts_spread.jpg/1280px-Mixed_nuts_spread.jpg",
+      "imageAttribution": "Wikipedia: Mezcla de frutos secos",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Mezcla_de_frutos_secos"
+    },
+    {
+      "family": "marisco",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/SeasidePrawnCoctail.jpg/1280px-SeasidePrawnCoctail.jpg",
+      "imageAttribution": "Wikipedia: Marisco",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Marisco"
+    },
+    {
+      "family": "pescado",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Odesa_bazaar%2C_Prussian_Carps.jpg/1280px-Odesa_bazaar%2C_Prussian_Carps.jpg",
+      "imageAttribution": "Wikipedia: Pescado",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Pescado"
+    },
+    {
+      "family": "condimentos",
+      "imageUrl": "https://live.staticflickr.com/40/86501109_8e1a518207_b.jpg",
+      "imageAttribution": "Openverse: Condimentos - VIc Lic",
+      "imageAttributionUrl": "https://www.flickr.com/photos/72675636@N00/86501109"
+    },
+    {
+      "family": "semillas",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Colored_quinoa_Genebank_INIA_Juliaca.JPG/1280px-Colored_quinoa_Genebank_INIA_Juliaca.JPG",
+      "imageAttribution": "Wikipedia: Semillas comestibles",
+      "imageAttributionUrl": "https://es.wikipedia.org/wiki/Semillas_comestibles"
+    }
+  ],
+  "all": {
+    "imageUrl": "https://c.pxhere.com/images/0d/18/692b96c4b089507219cf7247a57f-1621684.jpg!d",
+    "imageAttribution": "pxhere",
+    "imageAttributionUrl": "https://pxhere.com"
+  }
+}

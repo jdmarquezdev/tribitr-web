@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  accent-color: var(--accent);
+  --bg: #ffffff;
+  --bg-alt: #f1fbf4;
+  --card: #ffffff;
+  --card-introduced: #e1f5e6;
+  --text: #103121;
+  --muted: #365043;
+  --border: #c9e3cf;
+  --accent: #2f9d55;
+  --accent-strong: #1f6b3a;
+  --accent-contrast: #ffffff;
+  --pill: #ffffff;
+  --pill-muted: #f6fffa;
+  --header: #2f9d55;
+  --header-text: #ffffff;
+}
+
+.theme-dark {
+  color-scheme: dark;
+  accent-color: var(--accent);
+  --bg: #0f1b14;
+  --bg-alt: #15261c;
+  --card: #1a2d22;
+  --card-introduced: #1f3a2a;
+  --text: #f0f7f1;
+  --muted: #b5c7bc;
+  --border: #2a4334;
+  --accent: #4fd084;
+  --accent-strong: #7be1a2;
+  --accent-contrast: #0f1b14;
+  --pill: #213929;
+  --pill-muted: #1a2f23;
+  --header: #214c33;
+  --header-text: #f0f7f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Work Sans", system-ui, sans-serif;
+  background: radial-gradient(circle at top, var(--bg-alt) 0%, var(--bg) 45%, var(--bg) 100%);
+  color: var(--text);
+}
+
+h1, h2, h3, h4 {
+  font-family: "Fraunces", serif;
+  letter-spacing: -0.02em;
+}
+
+button {
+  font-family: inherit;
+}
+
+select {
+  color: var(--text);
+  background-color: var(--card);
+}
+
+option,
+optgroup {
+  color: var(--text);
+  background-color: var(--card);
+}
+
+option:checked,
+option:hover,
+option:focus {
+  color: var(--accent-contrast);
+  background-color: color-mix(in srgb, var(--accent) 92%, var(--card));
+}
+
+.theme-dark select,
+.theme-dark option,
+.theme-dark optgroup {
+  color-scheme: dark;
+}
+
+.card {
+  background: var(--card-surface, var(--card));
+  border: 1px solid var(--accent);
+  border-radius: 18px;
+}
+
+.card-introduced {
+  --card-surface: var(--card-introduced);
+}
+
+.pill {
+  background: var(--pill);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.pill-strong {
+  background: color-mix(in srgb, var(--accent) 18%, var(--card));
+  color: var(--accent-strong);
+}
+
+.glass {
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+.fade-in {
+  animation: fadeIn 0.35s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

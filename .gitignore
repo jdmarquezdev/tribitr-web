@@ -1,0 +1,16 @@
+node_modules/
+backend/node_modules/
+
+dist/
+backend/dist/
+
+.env
+backend/.env
+
+*.tsbuildinfo
+
+tribitr-Bebe.json
+vite.config.js
+vite.config.d.ts
+
+DEVLOG.md
