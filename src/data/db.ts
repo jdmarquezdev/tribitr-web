@@ -7,6 +7,9 @@ export type Profile = {
   id: string
   name: string
   shareCode: string
+  babyName?: string
+  babyBirthDate?: string
+  correctedWeeks?: number
   updatedAt: string
 }
 
@@ -32,6 +35,9 @@ export type ProfileSnapshot = {
   profileId: string
   profileName: string
   shareCode: string
+  babyName?: string
+  babyBirthDate?: string
+  correctedWeeks?: number
   revision: number
   updatedAt: string
   settings: {
@@ -39,6 +45,7 @@ export type ProfileSnapshot = {
     language: AppLanguage
     hideIntroduced: boolean
     showHidden: boolean
+    showNotSuitableFoods?: boolean
   }
   foods: Record<string, FoodState>
   customFoods?: Record<

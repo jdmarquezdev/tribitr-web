@@ -24,6 +24,7 @@
       "id": "acelga",
       "name": "Acelga",
       "family": "verduras",
+      "recommendedFromMonths": 12,
       "allergens": [],
       "seedDescription": "La acelga es una verdura de hoja verde con tallos coloridos (blancos, rojos o amarillos), muy utilizada en la cocina española, especialmente en platos como la ensalada de acelga o guisos. Este contenido no sustituye el consejo médico profesional.",
       "imageUrl": "https://live.staticflickr.com/1112/5133715406_8a8b7cb45c_b.jpg",
@@ -142,6 +143,7 @@
       "id": "atun",
       "name": "Atun",
       "family": "pescado",
+      "recommendedFromMonths": 12,
       "allergens": [
         "pescado"
       ],
@@ -444,6 +446,7 @@
       "id": "espinacas",
       "name": "Espinacas",
       "family": "verduras",
+      "recommendedFromMonths": 12,
       "allergens": [],
       "seedDescription": "Las espinacas son una verdura de hoja verde rica en hierro y vitaminas. Aunque la leyenda de Popeye las asoció a fuerza sobrehumana, su contenido de hierro fue malinterpretado en el pasado.",
       "imageUrl": "https://live.staticflickr.com/7144/6420373241_5fc64f055b_b.jpg",
@@ -538,6 +541,7 @@
       "id": "jamon",
       "name": "Jamon",
       "family": "carne",
+      "recommendedFromMonths": 12,
       "allergens": [],
       "seedDescription": "El jamón es un embutido tradicional español elaborado con pata de cerdo curada, con una larga historia culinaria. Este contenido no sustituye el consejo médico profesional.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/SIM%C3%93N_MART%C3%8DN_GUIJUELO.JPG/1280px-SIM%C3%93N_MART%C3%8DN_GUIJUELO.JPG",
@@ -568,6 +572,7 @@
       "id": "kefir",
       "name": "Kefir",
       "family": "lacteos",
+      "recommendedFromMonths": 9,
       "allergens": [
         "leche"
       ],
@@ -602,6 +607,7 @@
       "id": "leche",
       "name": "Leche",
       "family": "lacteos",
+      "recommendedFromMonths": 12,
       "allergens": [
         "leche"
       ],
@@ -696,6 +702,7 @@
       "id": "mantequilla",
       "name": "Mantequilla",
       "family": "lacteos",
+      "recommendedFromMonths": 9,
       "allergens": [
         "leche"
       ],
@@ -762,6 +769,7 @@
       "id": "mostaza",
       "name": "Mostaza",
       "family": "condimentos",
+      "recommendedFromMonths": 12,
       "allergens": [
         "mostaza"
       ],
@@ -996,6 +1004,7 @@
       "id": "queso",
       "name": "Queso fresco",
       "family": "lacteos",
+      "recommendedFromMonths": 9,
       "allergens": [
         "leche"
       ],
@@ -1018,6 +1027,7 @@
       "id": "remolacha",
       "name": "Remolacha",
       "family": "verduras",
+      "recommendedFromMonths": 12,
       "allergens": [],
       "seedDescription": "La remolacha es una verdura rica en betalainas, que le dan su color rojo intenso. Este contenido no sustituye el consejo médico profesional.",
       "imageUrl": "https://www.publicdomainpictures.net/pictures/160000/velka/farmers-market-fresh-beets.jpg",
@@ -1028,6 +1038,7 @@
       "id": "requeson",
       "name": "Requeson",
       "family": "lacteos",
+      "recommendedFromMonths": 9,
       "allergens": [
         "leche"
       ],
@@ -1040,6 +1051,7 @@
       "id": "sal",
       "name": "Sal",
       "family": "condimentos",
+      "recommendedFromMonths": 12,
       "allergens": [],
       "seedDescription": "La sal es un condimento esencial desde la antigüedad para realzar sabores y preservar alimentos. Este contenido no sustituye el consejo de un profesional de la salud.",
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Table_salt_with_salt_shaker_V1.jpg/1280px-Table_salt_with_salt_shaker_V1.jpg",
@@ -1186,6 +1198,7 @@
       "id": "yogur",
       "name": "Yogur natural",
       "family": "lacteos",
+      "recommendedFromMonths": 9,
       "allergens": [
         "leche"
       ],

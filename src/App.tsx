@@ -1,4 +1,12 @@
-import { useEffect, useId, useMemo, useRef, useState } from "react"
+import {
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+  type ReactNode,
+} from "react"
 import QRCode from "qrcode"
 import {
   DndContext,
@@ -30,12 +38,27 @@ import {
   saveSnapshot,
 } from "./data/db"
 import { createTranslator } from "./i18n"
+import iconAdd from "./assets/material/add.svg"
+import iconArrowBack from "./assets/material/arrow_back.svg"
+import iconCheck from "./assets/material/check.svg"
+import iconClose from "./assets/material/close.svg"
+import iconContentCopy from "./assets/material/content_copy.svg"
+import iconDelete from "./assets/material/delete.svg"
+import iconDragIndicator from "./assets/material/drag_indicator.svg"
+import iconErrorOutline from "./assets/material/error_outline.svg"
+import iconFilterList from "./assets/material/filter_list.svg"
+import iconQrCode from "./assets/material/qr_code.svg"
+import iconSettings from "./assets/material/settings.svg"
+import iconShare from "./assets/material/share.svg"
+import iconSort from "./assets/material/sort.svg"
+import iconSync from "./assets/material/sync.svg"
 
 type FoodSeed = {
   id: string
   name: string
   family: string
   allergens: string[]
+  recommendedFromMonths?: number
   imageUrl: string
   imageAttribution?: string
   imageAttributionUrl?: string
@@ -88,9 +111,96 @@ type FullBackupPayload = {
 type ViewMode = "home" | "list" | "settings"
 
 const AUTHOR_NAME = "Juan Diego Marquez Tebar"
-const AUTHOR_EMAIL = "juandiego.marquez@gmail.com"
+const AUTHOR_EMAIL = "hola@jdmarquez.dev"
 const AUTHOR_GITHUB_URL = "https://github.com/juandiegomarquez"
 const AUTHOR_LINKEDIN_URL = "https://www.linkedin.com/in/juandiegomarquez/"
+
+const GitHubIcon = () => (
+  <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true" focusable="false">
+    <path
+      fill="currentColor"
+      d="M12 .297a12 12 0 0 0-3.793 23.386c.6.111.82-.259.82-.577v-2.234c-3.338.726-4.042-1.611-4.042-1.611a3.186 3.186 0 0 0-1.336-1.76c-1.091-.744.083-.729.083-.729a2.52 2.52 0 0 1 1.84 1.24 2.55 2.55 0 0 0 3.487.995 2.552 2.552 0 0 1 .762-1.598c-2.665-.3-5.466-1.333-5.466-5.93a4.64 4.64 0 0 1 1.235-3.222 4.31 4.31 0 0 1 .117-3.176s1.008-.322 3.301 1.23a11.38 11.38 0 0 1 6.004 0c2.291-1.552 3.297-1.23 3.297-1.23a4.31 4.31 0 0 1 .12 3.176 4.63 4.63 0 0 1 1.234 3.222c0 4.61-2.804 5.625-5.476 5.921a2.862 2.862 0 0 1 .817 2.22v3.293c0 .321.216.694.825.576A12.001 12.001 0 0 0 12 .297"
+    />
+  </svg>
+)
+
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true" focusable="false">
+    <path
+      fill="currentColor"
+      d="M20.447 20.452H16.89V14.87c0-1.331-.028-3.043-1.852-3.043-1.853 0-2.136 1.446-2.136 2.946v5.679H9.347V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.369-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729V22.27C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+    />
+  </svg>
+)
+
+type MaterialMaskIconProps = {
+  src: string
+}
+
+const MaterialMaskIcon = ({ src }: MaterialMaskIconProps) => {
+  const style = {
+    mask: `url("${src}") center / contain no-repeat`,
+    WebkitMask: `url("${src}") center / contain no-repeat`,
+    backgroundColor: "currentColor",
+  } satisfies CSSProperties
+  return <span aria-hidden="true" className="inline-block h-4 w-4 shrink-0" style={style} />
+}
+
+const CopyIcon = () => (
+  <MaterialMaskIcon src={iconContentCopy} />
+)
+
+const ShareIcon = () => (
+  <MaterialMaskIcon src={iconShare} />
+)
+
+const QrIcon = () => (
+  <MaterialMaskIcon src={iconQrCode} />
+)
+
+const SyncIcon = () => (
+  <MaterialMaskIcon src={iconSync} />
+)
+
+const AddIcon = () => (
+  <MaterialMaskIcon src={iconAdd} />
+)
+
+const FilterListIcon = () => (
+  <MaterialMaskIcon src={iconFilterList} />
+)
+
+const SortIcon = () => (
+  <MaterialMaskIcon src={iconSort} />
+)
+
+const ArrowBackIcon = () => (
+  <MaterialMaskIcon src={iconArrowBack} />
+)
+
+const ErrorOutlineIcon = () => (
+  <MaterialMaskIcon src={iconErrorOutline} />
+)
+
+const DragIndicatorIcon = () => (
+  <MaterialMaskIcon src={iconDragIndicator} />
+)
+
+const SettingsIcon = () => (
+  <MaterialMaskIcon src={iconSettings} />
+)
+
+const CloseIcon = () => (
+  <MaterialMaskIcon src={iconClose} />
+)
+
+const CheckIcon = () => (
+  <MaterialMaskIcon src={iconCheck} />
+)
+
+const DeleteIcon = () => (
+  <MaterialMaskIcon src={iconDelete} />
+)
 
 const parseBooleanFlag = (value?: string | null) => {
   if (!value) return null
@@ -220,6 +330,17 @@ const formatDateTime = (value: string, language: AppLanguage = "es") =>
     timeStyle: "short",
   }).format(new Date(value))
 
+const formatDateWithTimeSeconds = (value: string, language: AppLanguage = "es") =>
+  new Intl.DateTimeFormat(language === "en" ? "en-GB" : "es-ES", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  }).format(new Date(value))
+
 const formatRelativeFromNow = (value: string, language: AppLanguage = "es") => {
   const diffMs = Date.now() - new Date(value).getTime()
   if (!Number.isFinite(diffMs) || diffMs < 0) return language === "en" ? "now" : "ahora"
@@ -230,6 +351,46 @@ const formatRelativeFromNow = (value: string, language: AppLanguage = "es") => {
   if (hours < 24) return language === "en" ? `${hours} h ago` : `hace ${hours} h`
   const days = Math.floor(hours / 24)
   return language === "en" ? `${days} d ago` : `hace ${days} d`
+}
+
+const dayMs = 24 * 60 * 60 * 1000
+const monthMs = 30.4375 * dayMs
+
+const calculateCorrectedAgeMonths = (birthDate?: string, correctedWeeks = 0) => {
+  if (!birthDate) return null
+  const parsedBirthDate = new Date(`${birthDate}T12:00:00`)
+  const birthMs = parsedBirthDate.getTime()
+  if (!Number.isFinite(birthMs)) return null
+  const correctionMs = Math.max(0, correctedWeeks) * 7 * dayMs
+  const effectiveAgeMs = Date.now() - birthMs - correctionMs
+  if (!Number.isFinite(effectiveAgeMs)) return null
+  if (effectiveAgeMs <= 0) return 0
+  return Math.floor(effectiveAgeMs / monthMs)
+}
+
+const getFoodSuitability = (
+  recommendedFromMonths: number | undefined,
+  ageMonths: number | null
+) => {
+  if (typeof recommendedFromMonths !== "number") {
+    return {
+      hasRecommendation: false,
+      isTooEarly: false,
+      isSuitable: true,
+    }
+  }
+  if (ageMonths === null) {
+    return {
+      hasRecommendation: true,
+      isTooEarly: false,
+      isSuitable: true,
+    }
+  }
+  return {
+    hasRecommendation: true,
+    isTooEarly: ageMonths < recommendedFromMonths,
+    isSuitable: ageMonths >= recommendedFromMonths,
+  }
 }
 
 const buildPlaceholderImage = (label: string) => {
@@ -460,6 +621,9 @@ const createSnapshot = (
     profileId: profile.id,
     profileName: profile.name,
     shareCode: profile.shareCode,
+    babyName: profile.babyName ?? "",
+    babyBirthDate: profile.babyBirthDate ?? "",
+    correctedWeeks: profile.correctedWeeks ?? 0,
     revision: 1,
     updatedAt: now,
     settings: {
@@ -467,6 +631,7 @@ const createSnapshot = (
       language: "es",
       hideIntroduced: false,
       showHidden: false,
+      showNotSuitableFoods: false,
     },
     foods,
     customFoods,
@@ -651,6 +816,7 @@ const mergeSnapshots = (
   const remoteUpdatedAt = Date.parse(remote.updatedAt)
   const settings =
     localUpdatedAt >= remoteUpdatedAt ? local.settings : remote.settings
+  const newestSnapshot = localUpdatedAt >= remoteUpdatedAt ? local : remote
 
   const mergedCustomFoods = {
     ...normalizeCustomFoods(local.customFoods as Record<string, FoodSeed>),
@@ -681,6 +847,9 @@ const mergeSnapshots = (
     ...remote,
     profileName: remote.profileName || local.profileName,
     shareCode: remote.shareCode || local.shareCode,
+    babyName: newestSnapshot.babyName || "",
+    babyBirthDate: newestSnapshot.babyBirthDate || "",
+    correctedWeeks: newestSnapshot.correctedWeeks ?? 0,
     foods: normalizeFoods(mergedFoods),
     customFoods: mergedCustomFoods,
     customFamilies: mergedCustomFamilies,
@@ -703,6 +872,7 @@ type SortableRowProps = {
   food: FoodSeed
   state: FoodState
   language: AppLanguage
+  ageMonths: number | null
   onToggleExposure: (id: string, index: number) => void
   onOpen: (id: string) => void
 }
@@ -713,7 +883,7 @@ type PillMenuOption = {
 }
 
 type PillMenuProps = {
-  icon: string
+  icon?: ReactNode
   value: string
   options: PillMenuOption[]
   ariaLabel: string
@@ -755,6 +925,7 @@ const SortableFoodRow = ({
   food,
   state,
   language,
+  ageMonths,
   onToggleExposure,
   onOpen,
 }: SortableRowProps) => {
@@ -772,6 +943,10 @@ const SortableFoodRow = ({
   }
   const progress = state.exposures.length
   const isIntroduced = progress >= 3
+  const suitability = getFoodSuitability(food.recommendedFromMonths, ageMonths)
+  const ageWarningHighlighted =
+    typeof food.recommendedFromMonths === "number" &&
+    (food.recommendedFromMonths >= 12 || suitability.isTooEarly)
 
   return (
     <div
@@ -790,7 +965,7 @@ const SortableFoodRow = ({
               {...listeners}
               aria-label={language === "en" ? "Drag" : "Arrastrar"}
             >
-            |||
+            <DragIndicatorIcon />
           </button>
           <button type="button" onClick={() => onOpen(food.id)}>
             <img
@@ -814,6 +989,19 @@ const SortableFoodRow = ({
                 </span>
                 <span className="pill">{formatFamily(food.family)}</span>
                 <span className="pill">{renderAllergens(food.allergens, language)}</span>
+                {typeof food.recommendedFromMonths === "number" && (
+                  <span
+                    className={`pill ${
+                      ageWarningHighlighted
+                        ? "border !border-red-700 !bg-red-600 !text-white font-semibold"
+                        : ""
+                    }`}
+                  >
+                    {suitability.isTooEarly
+                      ? `${language === "en" ? "Not suitable" : "No apto"}: +${food.recommendedFromMonths}m`
+                      : `+${food.recommendedFromMonths}m`}
+                  </span>
+                )}
               </div>
             </button>
           </div>
@@ -839,11 +1027,11 @@ const SortableFoodRow = ({
                 }`}
               >
                 <input
-                  type="checkbox"
-                  className="sr-only"
-                  checked={index < progress}
-                  onChange={() => onToggleExposure(food.id, index)}
-                />
+                        type="checkbox"
+                        className="sr-only"
+                        checked={index < progress}
+                        onChange={() => onToggleExposure(food.id, index)}
+                      />
                 {index + 1}
               </label>
             ))}
@@ -989,10 +1177,8 @@ const PillMenu = ({
         onClick={() => setOpen((prev) => !prev)}
         className={`flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-2 text-xs ${buttonClassName}`}
       >
-        <span aria-hidden="true" className="text-sm text-[var(--muted)]">
-          {icon}
-        </span>
-        <span>{selected?.label}</span>
+        {icon && <span aria-hidden="true" className="text-[var(--muted)]">{icon}</span>}
+        <span className="max-w-[120px] truncate">{selected?.label}</span>
         <span aria-hidden="true" className="text-[10px] text-[var(--muted)]">
           ▾
         </span>
@@ -1040,11 +1226,15 @@ const App = () => {
   const [isReady, setIsReady] = useState(false)
   const [isProfileLoaded, setIsProfileLoaded] = useState(false)
   const [view, setView] = useState<ViewMode>(defaultMainView)
+  const [settingsSection, setSettingsSection] = useState<
+    "profile" | "sync" | "appearance" | "data" | "legal"
+  >("profile")
   const [activeFoodId, setActiveFoodId] = useState<string | null>(null)
   const [search, setSearch] = useState("")
   const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc")
   const [hideIntroduced, setHideIntroduced] = useState(false)
   const [showHidden, setShowHidden] = useState(false)
+  const [showNotSuitableFoods, setShowNotSuitableFoods] = useState(false)
   const [language, setLanguage] = useState<AppLanguage>("es")
   const [activeFamily, setActiveFamily] = useState<string>("Todos")
   const [profiles, setProfiles] = useState<Profile[]>([])
@@ -1114,15 +1304,24 @@ const App = () => {
     height: number
   } | null>(null)
   const [newProfileName, setNewProfileName] = useState("")
+  const [showCreateProfileAction, setShowCreateProfileAction] = useState(false)
+  const [babyNameInput, setBabyNameInput] = useState("")
+  const [babyBirthDateInput, setBabyBirthDateInput] = useState("")
+  const [correctedWeeksInput, setCorrectedWeeksInput] = useState("0")
   const [showAddFood, setShowAddFood] = useState(false)
   const [newFoodName, setNewFoodName] = useState("")
   const [newFoodFamily, setNewFoodFamily] = useState("")
   const [newFoodAllergens, setNewFoodAllergens] = useState("")
+  const [showFilterMenu, setShowFilterMenu] = useState(false)
+  const [showSortMenu, setShowSortMenu] = useState(false)
   const [joinShareCode, setJoinShareCode] = useState("")
-  const [copyStatus, setCopyStatus] = useState<"idle" | "success" | "error">(
-    "idle"
-  )
-  const copyTimerRef = useRef<number | null>(null)
+  const [floatingNotice, setFloatingNotice] = useState<{
+    text: string
+    type: "success" | "error"
+  } | null>(null)
+  const floatingNoticeTimerRef = useRef<number | null>(null)
+  const filterMenuRef = useRef<HTMLDivElement | null>(null)
+  const sortMenuRef = useRef<HTMLDivElement | null>(null)
   const [showShareQr, setShowShareQr] = useState(false)
   const [shareQrUrl, setShareQrUrl] = useState("")
   const [shareQrLink, setShareQrLink] = useState("")
@@ -1132,7 +1331,45 @@ const App = () => {
   const undoTimerRef = useRef<number | null>(null)
   const syncIndicatorTimerRef = useRef<number | null>(null)
   const onboardingStorageKey = "tribitr-onboarding-v1"
+  const cookieNoticeStorageKey = "tribitr-cookie-notice-v1"
+  const [cookieNoticeAccepted, setCookieNoticeAccepted] = useState<boolean>(() => {
+    return localStorage.getItem(cookieNoticeStorageKey) === "accepted"
+  })
   const t = useMemo(() => createTranslator(language), [language])
+
+  useEffect(() => {
+    return () => {
+      if (floatingNoticeTimerRef.current) {
+        window.clearTimeout(floatingNoticeTimerRef.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    const onMouseDown = (event: MouseEvent) => {
+      const target = event.target as Node
+      if (filterMenuRef.current && !filterMenuRef.current.contains(target)) {
+        setShowFilterMenu(false)
+      }
+      if (sortMenuRef.current && !sortMenuRef.current.contains(target)) {
+        setShowSortMenu(false)
+      }
+    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return
+      setShowFilterMenu(false)
+      setShowSortMenu(false)
+    }
+    document.addEventListener("mousedown", onMouseDown)
+    document.addEventListener("keydown", onKeyDown)
+    return () => {
+      document.removeEventListener("mousedown", onMouseDown)
+      document.removeEventListener("keydown", onKeyDown)
+    }
+  }, [])
+
+  const correctedWeeks = Math.max(0, Number.parseInt(correctedWeeksInput, 10) || 0)
+  const correctedAgeMonths = calculateCorrectedAgeMonths(babyBirthDateInput, correctedWeeks)
 
   const allFoods = useMemo(
     () => [...foodsSeed, ...Object.values(customFoods)],
@@ -1216,15 +1453,22 @@ const App = () => {
       {
         id: "profile",
         title: t("Perfiles"),
-        description: t("Aqui cambias entre perfiles para llevar el seguimiento de cada bebe."),
+        description: t("Aquí cambias entre perfiles para llevar el seguimiento de cada bebé."),
         selector: '[data-tour="profile-selector"]',
+        view: defaultMainView,
+      },
+      {
+        id: "settings-entry",
+        title: t("Ajustes"),
+        description: t("Desde este botón abres Ajustes para sincronización, perfiles y configuración de la app."),
+        selector: '[data-tour="settings-entry"]',
         view: defaultMainView,
       },
     ]
     if (familyHomeEnabled) {
       steps.push({
         id: "families",
-        title: t("Familias"),
+        title: t("Familias de alimentos"),
         description: t("Empieza por una familia o entra en Todos para ver la lista completa de alimentos."),
         selector: '[data-tour="home-families"]',
         view: "home",
@@ -1235,17 +1479,46 @@ const App = () => {
       {
         id: "list-controls",
         title: t("Controles de la lista"),
-        description: t("Usa busqueda, filtros y orden para encontrar rapido lo que necesitas en el dia a dia."),
+        description: t("Usa búsqueda, filtros y ordenar para encontrar rápido alimentos; en Filtros tienes familia, ocultar 3/3 y mostrar ocultos."),
         selector: '[data-tour="list-controls"]',
         view: "list",
-        beforeStep: () => setActiveFamily("Todos"),
+        beforeStep: () => {
+          setActiveFamily("Todos")
+          setShowFilterMenu(false)
+          setShowSortMenu(false)
+        },
+      },
+      {
+        id: "settings-profiles",
+        title: t("Perfiles"),
+        description: t("En Ajustes > Perfiles puedes crear, editar y seleccionar el perfil activo del bebé."),
+        selector: '[data-tour="settings-profiles"]',
+        view: "settings",
+        beforeStep: () => setSettingsSection("profile"),
+      },
+      {
+        id: "settings-configuration",
+        title: t("Configuración"),
+        description: t("En Configuración ajustas tema e idioma y gestionas familias, ocultos y alérgenos."),
+        selector: '[data-tour="settings-configuration"]',
+        view: "settings",
+        beforeStep: () => setSettingsSection("appearance"),
+      },
+      {
+        id: "settings-data",
+        title: t("Exportar / Importar"),
+        description: t("Desde Exportar / Importar puedes guardar o restaurar perfiles y copias de seguridad."),
+        selector: '[data-tour="settings-data"]',
+        view: "settings",
+        beforeStep: () => setSettingsSection("data"),
       },
       {
         id: "settings-sync",
         title: t("Sincronizacion"),
-        description: t("Desde Ajustes compartes el enlace secreto para sincronizar el mismo perfil en varios dispositivos."),
+        description: t("Aquí puedes copiar, compartir o mostrar QR del código del perfil y forzar sincronización manual."),
         selector: '[data-tour="settings-sync"]',
         view: "settings",
+        beforeStep: () => setSettingsSection("sync"),
       }
     )
     return steps
@@ -1351,8 +1624,13 @@ const App = () => {
       setOrderUpdatedAt(getOrderUpdatedAt(snapshot) || new Date().toISOString())
       setHideIntroduced(snapshot.settings.hideIntroduced)
       setShowHidden(snapshot.settings.showHidden)
+      setShowNotSuitableFoods(snapshot.settings.showNotSuitableFoods ?? false)
       setTheme(snapshot.settings.theme)
       setLanguage(snapshot.settings.language ?? "es")
+      setNewProfileName(snapshot.profileName ?? "")
+      setBabyNameInput(snapshot.profileName || snapshot.babyName || "")
+      setBabyBirthDateInput(snapshot.babyBirthDate ?? "")
+      setCorrectedWeeksInput(String(snapshot.correctedWeeks ?? 0))
       setSyncRevision(snapshot.revision ?? 0)
       setIsProfileLoaded(true)
     }
@@ -1610,6 +1888,9 @@ const App = () => {
       profileId,
       profileName: profile.name,
       shareCode: profile.shareCode,
+      babyName: babyNameInput.trim(),
+      babyBirthDate: babyBirthDateInput.trim(),
+      correctedWeeks,
       revision: syncRevision || 1,
       updatedAt: new Date().toISOString(),
       settings: {
@@ -1617,6 +1898,7 @@ const App = () => {
         language,
         hideIntroduced,
         showHidden,
+        showNotSuitableFoods,
       },
       foods: normalizeFoods(foodStates),
       customFoods: normalizeCustomFoods(customFoods),
@@ -1677,8 +1959,13 @@ const App = () => {
     setOrderUpdatedAt(getOrderUpdatedAt(snapshot) || new Date().toISOString())
     setHideIntroduced(snapshot.settings.hideIntroduced)
     setShowHidden(snapshot.settings.showHidden)
+    setShowNotSuitableFoods(snapshot.settings.showNotSuitableFoods ?? false)
     setTheme(snapshot.settings.theme)
     setLanguage(snapshot.settings.language ?? "es")
+    setNewProfileName(snapshot.profileName ?? "")
+    setBabyNameInput(snapshot.profileName || snapshot.babyName || "")
+    setBabyBirthDateInput(snapshot.babyBirthDate ?? "")
+    setCorrectedWeeksInput(String(snapshot.correctedWeeks ?? 0))
     setSyncRevision(snapshot.revision ?? 0)
     saveSnapshot(snapshot)
   }
@@ -1710,7 +1997,11 @@ const App = () => {
     theme,
     hideIntroduced,
     showHidden,
+    showNotSuitableFoods,
     language,
+    babyNameInput,
+    babyBirthDateInput,
+    correctedWeeksInput,
     foodStates,
     customFoods,
     customFamilies,
@@ -1809,7 +2100,6 @@ const App = () => {
             revision: number
           }
           applySnapshot(retryData.snapshot)
-          setLastSyncAt(new Date().toISOString())
           setSyncError("")
           return
         }
@@ -1819,7 +2109,6 @@ const App = () => {
           revision: number
         }
         applySnapshot(data.snapshot)
-        setLastSyncAt(new Date().toISOString())
         setSyncError("")
       } catch {
         setSyncError(t("No se pudo sincronizar"))
@@ -1844,6 +2133,10 @@ const App = () => {
     language,
     hideIntroduced,
     showHidden,
+    showNotSuitableFoods,
+    babyNameInput,
+    babyBirthDateInput,
+    correctedWeeksInput,
     syncRevision,
   ])
 
@@ -1876,7 +2169,7 @@ const App = () => {
       } finally {
         setIsSyncing(false)
       }
-    }, 45000)
+    }, 900000)
 
     return () => window.clearInterval(interval)
   }, [syncReady, profileId, profiles, apiBase, language])
@@ -2446,6 +2739,9 @@ const App = () => {
       profileId,
       profileName: profile.name,
       shareCode: profile.shareCode,
+      babyName: babyNameInput.trim(),
+      babyBirthDate: babyBirthDateInput.trim(),
+      correctedWeeks,
       revision: 1,
       updatedAt: new Date().toISOString(),
       settings: {
@@ -2453,6 +2749,7 @@ const App = () => {
         language,
         hideIntroduced,
         showHidden,
+        showNotSuitableFoods,
       },
       foods: normalizeFoods(foodStates),
       customFoods: normalizeCustomFoods(customFoods),
@@ -2499,6 +2796,9 @@ const App = () => {
         profileId: snapshotSource.profileId ?? "",
         profileName: snapshotSource.profileName ?? "",
         shareCode: snapshotSource.shareCode ?? "",
+        babyName: snapshotSource.babyName ?? "",
+        babyBirthDate: snapshotSource.babyBirthDate ?? "",
+        correctedWeeks: snapshotSource.correctedWeeks ?? 0,
         revision: snapshotSource.revision ?? 1,
         updatedAt: snapshotSource.updatedAt ?? new Date().toISOString(),
         settings: {
@@ -2506,6 +2806,7 @@ const App = () => {
           language: snapshotSource.settings?.language ?? "es",
           hideIntroduced: snapshotSource.settings?.hideIntroduced ?? false,
           showHidden: snapshotSource.settings?.showHidden ?? false,
+          showNotSuitableFoods: snapshotSource.settings?.showNotSuitableFoods ?? false,
         },
         foods: snapshotSource.foods ?? {},
         customFoods: normalizeCustomFoods(snapshotSource.customFoods as Record<string, FoodSeed>),
@@ -2563,9 +2864,28 @@ const App = () => {
           id: data.profileId,
           name: data.profileName || t("Perfil importado"),
           shareCode: data.shareCode || createShareCode(),
+          babyName: data.babyName ?? "",
+          babyBirthDate: data.babyBirthDate ?? "",
+          correctedWeeks: data.correctedWeeks ?? 0,
           updatedAt: new Date().toISOString(),
         }
         const nextProfiles = [...profiles, nextProfile]
+        await saveProfiles(nextProfiles)
+        setProfiles(nextProfiles)
+      } else {
+        const nextProfiles = profiles.map((item) =>
+          item.id === data.profileId
+            ? {
+                ...item,
+                name: data.profileName || item.name,
+                shareCode: data.shareCode || item.shareCode,
+                babyName: data.babyName ?? "",
+                babyBirthDate: data.babyBirthDate ?? "",
+                correctedWeeks: data.correctedWeeks ?? 0,
+                updatedAt: new Date().toISOString(),
+              }
+            : item
+        )
         await saveProfiles(nextProfiles)
         setProfiles(nextProfiles)
       }
@@ -2578,8 +2898,13 @@ const App = () => {
       setOrder(data.order)
       setHideIntroduced(data.settings?.hideIntroduced ?? false)
       setShowHidden(data.settings?.showHidden ?? false)
+      setShowNotSuitableFoods(data.settings?.showNotSuitableFoods ?? false)
       setTheme(data.settings?.theme ?? "system")
       setLanguage(data.settings?.language ?? "es")
+      setNewProfileName(data.profileName ?? "")
+      setBabyNameInput(data.profileName || data.babyName || "")
+      setBabyBirthDateInput(data.babyBirthDate ?? "")
+      setCorrectedWeeksInput(String(data.correctedWeeks ?? 0))
     } catch {
       window.alert(t("No se pudo importar el archivo. Revisa el formato JSON."))
     } finally {
@@ -2734,20 +3059,58 @@ const App = () => {
     document.body.removeChild(textarea)
   }
 
-  const handleCopyShareCode = async () => {
+  const showFloatingNotice = (text: string, type: "success" | "error") => {
+    setFloatingNotice({ text, type })
+    if (floatingNoticeTimerRef.current) {
+      window.clearTimeout(floatingNoticeTimerRef.current)
+    }
+    floatingNoticeTimerRef.current = window.setTimeout(() => {
+      setFloatingNotice(null)
+      floatingNoticeTimerRef.current = null
+    }, 2600)
+  }
+
+  const handleCopyShareLinkFromSettings = async () => {
     const profile = profiles.find((item) => item.id === profileId)
     if (!profile) return
     try {
       await copyTextToClipboard(buildShareLink(profile.shareCode))
-      setCopyStatus("success")
-      if (copyTimerRef.current) window.clearTimeout(copyTimerRef.current)
-      copyTimerRef.current = window.setTimeout(() => {
-        setCopyStatus("idle")
-        copyTimerRef.current = null
-      }, 2000)
+      showFloatingNotice(t("Enlace copiado al portapapeles."), "success")
     } catch {
-      setCopyStatus("error")
-      window.alert(t("No se pudo copiar el enlace."))
+      showFloatingNotice(t("No se pudo copiar el enlace."), "error")
+    }
+  }
+
+  const handleShareProfile = async () => {
+    const profile = profiles.find((item) => item.id === profileId)
+    if (!profile) return
+    const link = buildShareLink(profile.shareCode)
+    const shareText = t("Perfil Tribitr: {name}\nCodigo: {code}\nEnlace: {link}")
+      .replace("{name}", profile.name)
+      .replace("{code}", profile.shareCode)
+      .replace("{link}", link)
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: t("Enlace secreto de Tribitr"),
+          text: shareText,
+          url: link,
+        })
+        return
+      } catch (error) {
+        const shareCancelled =
+          error instanceof DOMException &&
+          (error.name === "AbortError" || error.name === "NotAllowedError")
+        if (shareCancelled) return
+      }
+    }
+
+    try {
+      await copyTextToClipboard(profile.shareCode)
+      showFloatingNotice(t("Codigo copiado al portapapeles."), "success")
+    } catch {
+      showFloatingNotice(t("No se pudo compartir ni copiar el codigo."), "error")
     }
   }
 
@@ -2778,15 +3141,46 @@ const App = () => {
     if (!shareQrLink) return
     try {
       await copyTextToClipboard(shareQrLink)
-      setCopyStatus("success")
-      if (copyTimerRef.current) window.clearTimeout(copyTimerRef.current)
-      copyTimerRef.current = window.setTimeout(() => {
-        setCopyStatus("idle")
-        copyTimerRef.current = null
-      }, 2000)
+      showFloatingNotice(t("Enlace copiado al portapapeles."), "success")
     } catch {
-      setCopyStatus("error")
-      window.alert(t("No se pudo copiar el enlace."))
+      showFloatingNotice(t("No se pudo copiar el enlace."), "error")
+    }
+  }
+
+  const handleSyncNow = async () => {
+    if (!syncReady || !profileId) return
+    const profile = profiles.find((item) => item.id === profileId)
+    if (!profile) return
+    setIsSyncing(true)
+    try {
+      const response = await fetch(`${apiBase}/api/sync/pull`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          shareCode: profile.shareCode,
+          profileId: profile.id,
+        }),
+      })
+      if (response.status === 404) {
+        setLastSyncAt(new Date().toISOString())
+        setSyncError("")
+        showFloatingNotice(t("Sincronizacion completada."), "success")
+        return
+      }
+      if (!response.ok) throw new Error("pull failed")
+      const data = (await response.json()) as { snapshot: ProfileSnapshot }
+      const localSnapshot = buildLocalSnapshot()
+      if (!localSnapshot) return
+      const merged = mergeSnapshots(localSnapshot, data.snapshot)
+      applySnapshot(merged)
+      setLastSyncAt(new Date().toISOString())
+      setSyncError("")
+      showFloatingNotice(t("Sincronizacion completada."), "success")
+    } catch {
+      setSyncError(t("No se pudo sincronizar"))
+      showFloatingNotice(t("No se pudo sincronizar"), "error")
+    } finally {
+      setIsSyncing(false)
     }
   }
 
@@ -2824,6 +3218,9 @@ const App = () => {
           id: snapshot.profileId,
           name: snapshot.profileName || t("Perfil compartido"),
           shareCode: code,
+          babyName: snapshot.babyName ?? "",
+          babyBirthDate: snapshot.babyBirthDate ?? "",
+          correctedWeeks: snapshot.correctedWeeks ?? 0,
           updatedAt: new Date().toISOString(),
         }
         const nextProfiles = [...profiles, nextProfile]
@@ -2836,6 +3233,9 @@ const App = () => {
                 ...profile,
                 name: snapshot.profileName || profile.name,
                 shareCode: code || profile.shareCode,
+                babyName: snapshot.babyName ?? "",
+                babyBirthDate: snapshot.babyBirthDate ?? "",
+                correctedWeeks: snapshot.correctedWeeks ?? 0,
                 updatedAt: new Date().toISOString(),
               }
             : profile
@@ -2868,6 +3268,9 @@ const App = () => {
       id: `profile-${Date.now()}`,
       name: trimmed,
       shareCode: createShareCode(),
+      babyName: "",
+      babyBirthDate: "",
+      correctedWeeks: 0,
       updatedAt: new Date().toISOString(),
     }
     const nextProfiles = [...profiles, nextProfile]
@@ -2875,30 +3278,46 @@ const App = () => {
     await saveSnapshot(createSnapshot(nextProfile))
     setProfiles(nextProfiles)
     setProfileId(nextProfile.id)
-    setNewProfileName("")
+    setNewProfileName(nextProfile.name)
+    setShowCreateProfileAction(false)
+    setBabyNameInput("")
+    setBabyBirthDateInput("")
+    setCorrectedWeeksInput("0")
   }
 
-  const handleRenameProfile = async () => {
-    const trimmed = newProfileName.trim()
-    if (!trimmed) return
+  const handleSaveProfileDetails = async () => {
+    if (!profileId) return
+    const normalizedProfileName = newProfileName.trim()
+    if (!normalizedProfileName) return
+    const correctedWeeksValue = Math.max(0, Number.parseInt(correctedWeeksInput, 10) || 0)
+    const normalizedBirthDate = babyBirthDateInput.trim()
+    setCorrectedWeeksInput(String(correctedWeeksValue))
     const nextProfiles = profiles.map((profile) =>
       profile.id === profileId
-        ? { ...profile, name: trimmed, updatedAt: new Date().toISOString() }
+        ? {
+            ...profile,
+            name: normalizedProfileName,
+            babyName: babyNameInput.trim(),
+            babyBirthDate: normalizedBirthDate,
+            correctedWeeks: correctedWeeksValue,
+            updatedAt: new Date().toISOString(),
+          }
         : profile
     )
-    const activeProfile = nextProfiles.find((profile) => profile.id === profileId)
-    if (!activeProfile) return
-    const snapshot = await getSnapshot(profileId)
-    if (snapshot) {
-      await saveSnapshot({
-        ...snapshot,
-        profileName: trimmed,
-        updatedAt: new Date().toISOString(),
-      })
-    }
     await saveProfiles(nextProfiles)
     setProfiles(nextProfiles)
-    setNewProfileName("")
+
+    const snapshot = await getSnapshot(profileId)
+    if (!snapshot) return
+    await saveSnapshot({
+      ...snapshot,
+      profileName: normalizedProfileName,
+      babyName: babyNameInput.trim(),
+      babyBirthDate: normalizedBirthDate,
+      correctedWeeks: correctedWeeksValue,
+      updatedAt: new Date().toISOString(),
+    })
+    setShowCreateProfileAction(false)
   }
 
   const handleDeleteProfile = async () => {
@@ -2921,6 +3340,9 @@ const App = () => {
     await deleteSnapshot(profileId)
     setProfiles(nextProfiles)
     setProfileId(nextProfiles[0]?.id || "")
+    setNewProfileName(nextProfiles[0]?.name || "")
+    setBabyNameInput(nextProfiles[0]?.name || "")
+    setShowCreateProfileAction(false)
   }
 
   const visibleIds = useMemo(() => {
@@ -2931,14 +3353,33 @@ const App = () => {
       const state = foodStates[id]
       if (!showHidden && state.isHidden) return false
       if (hideIntroduced && state.exposures.length >= 3) return false
+      const suitability = getFoodSuitability(food.recommendedFromMonths, correctedAgeMonths)
+      if (!showNotSuitableFoods && suitability.isTooEarly) return false
       if (activeFamily !== "Todos" && food.family !== activeFamily) return false
       if (lowered && !food.name.toLowerCase().includes(lowered)) return false
       return true
     })
-  }, [order, foodsById, foodStates, showHidden, hideIntroduced, activeFamily, search])
+  }, [
+    order,
+    foodsById,
+    foodStates,
+    showHidden,
+    hideIntroduced,
+    showNotSuitableFoods,
+    correctedAgeMonths,
+    activeFamily,
+    search,
+  ])
 
   const activeFood = activeFoodId ? foodsById[activeFoodId] : null
   const activeFoodState = activeFoodId ? foodStates[activeFoodId] : null
+  const activeFoodSuitability = getFoodSuitability(
+    activeFood?.recommendedFromMonths,
+    correctedAgeMonths
+  )
+  const activeFoodAgeWarningHighlighted =
+    typeof activeFood?.recommendedFromMonths === "number" &&
+    (activeFood.recommendedFromMonths >= 12 || activeFoodSuitability.isTooEarly)
 
   useEffect(() => {
     if (!activeFoodId || !activeFoodState) return
@@ -2949,25 +3390,14 @@ const App = () => {
     void handleGenerateAi(activeFoodId)
   }, [activeFoodId, activeFoodState, aiLoading])
 
-  const syncStatus = syncError
-    ? t("Error sync")
-    : showSyncingIndicator
-      ? t("Sincronizando...")
-      : saveError
-        ? t("Error local")
-        : t("Guardado")
+  const currentProfileShareCode =
+    profiles.find((item) => item.id === profileId)?.shareCode || ""
+  const activeListFilterCount = Number(hideIntroduced) + Number(showHidden)
 
-  const syncMeta = useMemo(() => {
-    if (syncError) return ""
-    if (!lastSyncAt) return t("pendiente")
-    return formatRelativeFromNow(lastSyncAt, language)
-  }, [syncError, lastSyncAt, syncNowTick, language])
-
-  const syncStatusClass = syncError || saveError
-    ? "border-[#f2c3c3] bg-[#ffeaea] text-[#9b2b2b]"
-    : isSyncing || isLocalSaving
-      ? "border-white/30 bg-white/10 text-[var(--header-text)]"
-      : "border-white/30 bg-white/10 text-[var(--header-text)]"
+  const handleAcceptCookieNotice = () => {
+    localStorage.setItem(cookieNoticeStorageKey, "accepted")
+    setCookieNoticeAccepted(true)
+  }
 
   if (!isReady || !isProfileLoaded) {
     return (
@@ -2995,39 +3425,48 @@ const App = () => {
               <span className="sr-only">{activeFamily}</span>
             )}
           </div>
-          <div className="flex items-center gap-3">
-            <span
-              aria-live="polite"
-              className={`rounded-full border px-3 py-2 text-xs ${syncStatusClass}`}
-              title={
-                lastSyncAt
-                  ? `${t("Ultimo sync")} ${formatDateTime(lastSyncAt, language)}`
-                  : t("Sin sync todavia")
-              }
-            >
-              {syncStatus}
-              {!syncError && !saveError && syncMeta ? ` · ${syncMeta}` : ""}
-            </span>
+          <div className="flex items-center gap-2 sm:gap-3">
+            {syncError && (
+              <span
+                aria-live="polite"
+                className="inline-flex items-center gap-1 rounded-full border border-[#f2c3c3] bg-[#ffeaea] px-2 py-2 text-xs text-[#9b2b2b] sm:px-3"
+                title={syncError}
+              >
+                <ErrorOutlineIcon />
+                <span className="hidden sm:inline">{t("Error sync")}</span>
+              </span>
+            )}
             <div data-tour="profile-selector">
               <PillMenu
-                icon="👶"
                 value={profileId}
                 ariaLabel={t("Seleccionar perfil")}
-                onChange={(value) => setProfileId(value)}
+                onChange={(value) => {
+                  setProfileId(value)
+                  const selectedProfile = profiles.find((profile) => profile.id === value)
+                  if (!selectedProfile) return
+                  setNewProfileName(selectedProfile.name)
+                  setShowCreateProfileAction(false)
+                  setBabyNameInput(selectedProfile.name)
+                  setBabyBirthDateInput(selectedProfile.babyBirthDate ?? "")
+                  setCorrectedWeeksInput(String(selectedProfile.correctedWeeks ?? 0))
+                }}
                 options={profiles.map((profile) => ({
                   value: profile.id,
                   label: profile.name,
                 }))}
-                minWidthClass="min-w-[160px]"
+                minWidthClass="min-w-[118px] sm:min-w-[160px]"
                 buttonClassName="border-white/30 bg-white/10 text-[var(--header-text)]"
               />
             </div>
             <button
               type="button"
               onClick={() => setView("settings")}
-              className="rounded-full border border-white/30 bg-white px-4 py-2 text-sm text-[var(--header)] dark:bg-white/10 dark:text-[var(--header-text)]"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-white text-[var(--header)] dark:bg-white/10 dark:text-[var(--header-text)]"
+              aria-label={t("Ajustes")}
+              title={t("Ajustes")}
+              data-tour="settings-entry"
             >
-              {t("Ajustes")}
+              <SettingsIcon />
             </button>
           </div>
         </div>
@@ -3038,10 +3477,7 @@ const App = () => {
           <section className="fade-in">
             <div className="mb-6 flex items-end justify-between">
               <div>
-                <h1 className="text-3xl font-semibold">{t("Familias")}</h1>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Selecciona una familia para empezar a registrar exposiciones.")}
-                </p>
+                <h1 className="text-3xl font-semibold">{t("Familias de alimentos")}</h1>
               </div>
             </div>
             <div data-tour="home-families" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -3121,23 +3557,22 @@ const App = () => {
                     ? t("Todos los alimentos")
                     : formatFamily(activeFamily)}
                 </h1>
-                <p className="mt-1 text-sm text-[var(--muted)]">
-                  {t("Filtra y registra las exposiciones por alimento.")}
-                </p>
               </div>
               {familyHomeEnabled && (
                 <button
                   type="button"
                   onClick={() => setView("home")}
-                  className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--pill)]"
+                  aria-label={t("Volver")}
+                  title={t("Volver")}
                 >
-                  {t("Volver")}
+                  <ArrowBackIcon />
                 </button>
               )}
             </div>
             <div
               data-tour="list-controls"
-              className="sticky top-[78px] z-10 rounded-3xl border border-[var(--border)] bg-[var(--card)]/90 p-4 shadow-sm backdrop-blur"
+              className="sticky top-[70px] z-10 rounded-3xl border border-[var(--border)] bg-[var(--card)]/90 p-4 shadow-sm backdrop-blur sm:top-[78px]"
             >
               <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex flex-1 flex-col gap-3 sm:flex-row">
@@ -3145,21 +3580,7 @@ const App = () => {
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
                     placeholder={t("Buscar alimento")}
-                    className="w-full rounded-full border border-[var(--border)] bg-transparent px-4 py-2 text-sm"
-                  />
-                  <PillMenu
-                    icon="☰"
-                    value={activeFamily}
-                    ariaLabel={t("Filtrar por familia")}
-                    onChange={(value) => setActiveFamily(value)}
-                    options={[
-                      { value: "Todos", label: t("Todas las familias") },
-                      ...families.map((family) => ({
-                        value: family,
-                        label: formatFamily(family),
-                      })),
-                    ]}
-                    minWidthClass="min-w-[180px]"
+                    className="w-full rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
                   />
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
@@ -3173,37 +3594,112 @@ const App = () => {
                       setNewFoodAllergens("")
                       setShowAddFood(true)
                     }}
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-2 text-xs"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--pill)]"
+                    aria-label={t("Anadir alimento")}
+                    title={t("Anadir alimento")}
                   >
-                    + {t("Anadir alimento")}
+                    <AddIcon />
                   </button>
-                  <PillMenu
-                    icon="↕"
-                    value={sortDirection}
-                    ariaLabel={t("Ordenar alimentos")}
-                    onChange={handleSortDirectionChange}
-                    options={[
-                      { value: "asc", label: "A-Z" },
-                      { value: "desc", label: "Z-A" },
-                    ]}
-                    minWidthClass="min-w-[120px]"
-                  />
-                  <label className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-2 text-xs">
-                    <input
-                      type="checkbox"
-                      checked={hideIntroduced}
-                      onChange={(event) => setHideIntroduced(event.target.checked)}
-                    />
-                    {t("Ocultar 3/3")}
-                  </label>
-                  <label className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-2 text-xs">
-                    <input
-                      type="checkbox"
-                      checked={showHidden}
-                      onChange={(event) => setShowHidden(event.target.checked)}
-                    />
-                    {t("Mostrar ocultos")}
-                  </label>
+                  <div ref={sortMenuRef} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowSortMenu((prev) => !prev)
+                        setShowFilterMenu(false)
+                      }}
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--pill)]"
+                      aria-label={t("Ordenar alimentos")}
+                      title={t("Ordenar alimentos")}
+                      aria-haspopup="menu"
+                      aria-expanded={showSortMenu}
+                    >
+                      <SortIcon />
+                    </button>
+                    {showSortMenu && (
+                      <div className="fixed inset-x-4 top-[132px] z-30 rounded-2xl border border-[var(--border)] bg-[var(--card)] p-2 shadow-soft sm:absolute sm:inset-x-auto sm:top-auto sm:right-0 sm:mt-2 sm:min-w-[120px]">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            handleSortDirectionChange("asc")
+                            setShowSortMenu(false)
+                          }}
+                          className={`block w-full rounded-xl px-3 py-2 text-left text-xs ${
+                            sortDirection === "asc" ? "bg-[var(--pill)] font-semibold" : "hover:bg-[var(--pill-muted)]"
+                          }`}
+                        >
+                          A-Z
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            handleSortDirectionChange("desc")
+                            setShowSortMenu(false)
+                          }}
+                          className={`mt-1 block w-full rounded-xl px-3 py-2 text-left text-xs ${
+                            sortDirection === "desc" ? "bg-[var(--pill)] font-semibold" : "hover:bg-[var(--pill-muted)]"
+                          }`}
+                        >
+                          Z-A
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  <div ref={filterMenuRef} className="relative">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowFilterMenu((prev) => !prev)
+                        setShowSortMenu(false)
+                      }}
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--pill)]"
+                      aria-label={t("Filtros")}
+                      title={t("Filtros")}
+                      aria-haspopup="menu"
+                      aria-expanded={showFilterMenu}
+                    >
+                      <FilterListIcon />
+                    </button>
+                    {activeListFilterCount > 0 && (
+                      <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[var(--accent)] px-1 text-[10px] font-semibold text-white">
+                        {activeListFilterCount}
+                      </span>
+                    )}
+                    {showFilterMenu && (
+                      <div className="fixed inset-x-4 top-[132px] z-30 rounded-2xl border border-[var(--border)] bg-[var(--card)] p-3 shadow-soft sm:absolute sm:inset-x-auto sm:top-auto sm:right-0 sm:mt-2 sm:min-w-[270px]">
+                        <label className="block rounded-xl px-2 py-2 text-xs">
+                          <span className="mb-1 block text-[var(--muted)]">{t("Filtrar por familia de alimentos")}</span>
+                          <select
+                            value={activeFamily}
+                            onChange={(event) => setActiveFamily(event.target.value)}
+                            className="w-full rounded-xl border border-[var(--border)] bg-transparent px-3 py-2 text-xs"
+                          >
+                            <option value="Todos">{t("Todas las familias")}</option>
+                            {families.map((family) => (
+                              <option key={family} value={family}>
+                                {formatFamily(family)}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                        <label className="flex items-center gap-2 rounded-xl px-2 py-2 text-xs hover:bg-[var(--pill-muted)]">
+                          <input
+                            type="checkbox"
+                            checked={hideIntroduced}
+                            onChange={(event) => setHideIntroduced(event.target.checked)}
+                          />
+                          {t("Ocultar 3/3")}
+                        </label>
+                        <label className="mt-1 flex items-center gap-2 rounded-xl px-2 py-2 text-xs hover:bg-[var(--pill-muted)]">
+                          <input
+                            type="checkbox"
+                            checked={showHidden}
+                            onChange={(event) => setShowHidden(event.target.checked)}
+                          />
+                          {t("Mostrar ocultos")}
+                        </label>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -3220,6 +3716,7 @@ const App = () => {
                       food={foodsById[id]}
                       state={foodStates[id]}
                       language={language}
+                      ageMonths={correctedAgeMonths}
                       onToggleExposure={toggleExposure}
                       onOpen={(foodId) => setActiveFoodId(foodId)}
                     />
@@ -3240,336 +3737,471 @@ const App = () => {
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <h1 className="text-2xl font-semibold">{t("Ajustes")}</h1>
-                <p className="mt-1 text-sm text-[var(--muted)]">
-                  {t("Gestiona tema, sincronizacion y perfiles.")}
-                </p>
               </div>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setShowOnboardingPrompt(false)
-                    startOnboarding()
-                  }}
-                  className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                >
-                  {t("Ver visita rapida")}
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setView(defaultMainView)}
-                  className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                >
-                  {t("Volver")}
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={() => setView(defaultMainView)}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--pill)]"
+                aria-label={t("Volver")}
+                title={t("Volver")}
+              >
+                <ArrowBackIcon />
+              </button>
             </div>
-            <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
-              <div className="flex flex-col gap-6">
-              <div className="card p-6 shadow-soft">
-                <h2 className="text-xl font-semibold">{t("Tema")}</h2>
-                <p className="mt-2 text-sm text-[var(--muted)]">{t("Ajusta la apariencia de la app.")}</p>
-                <div className="mt-4 grid gap-2 sm:grid-cols-3">
-                  {([
-                    { value: "light", label: t("Claro") },
-                    { value: "dark", label: t("Oscuro") },
-                    { value: "system", label: t("Sistema") },
-                  ] as const).map((option) => (
-                    <button
-                      key={option.value}
-                      type="button"
-                      aria-pressed={theme === option.value}
-                      onClick={() => setTheme(option.value)}
-                      className={`rounded-2xl border px-4 py-3 text-sm transition ${
-                        theme === option.value
-                          ? "border-[var(--accent)] bg-[var(--pill)] text-[var(--accent-strong)]"
-                          : "border-[var(--border)] bg-transparent text-[var(--text)] hover:bg-[var(--pill-muted)]"
-                      }`}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
 
-              <div className="card p-6 shadow-soft">
-                <h2 className="text-xl font-semibold">{t("Idioma")}</h2>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Elige el idioma de la interfaz.")}
-                </p>
-                <div className="mt-4 grid gap-2 sm:grid-cols-2">
-                  {([
-                    { value: "es", label: "Español" },
-                    { value: "en", label: "English" },
-                  ] as const).map((option) => (
-                    <button
-                      key={option.value}
-                      type="button"
-                      aria-pressed={language === option.value}
-                      onClick={() => setLanguage(option.value)}
-                      className={`rounded-2xl border px-4 py-3 text-sm transition ${
-                        language === option.value
-                          ? "border-[var(--accent)] bg-[var(--pill)] text-[var(--accent-strong)]"
-                          : "border-[var(--border)] bg-transparent text-[var(--text)] hover:bg-[var(--pill-muted)]"
-                      }`}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
+            <div className="mt-5 flex gap-2 overflow-x-auto pb-1">
+              {([
+                { id: "profile", label: t("Perfiles") },
+                { id: "sync", label: t("Sincronizacion") },
+                { id: "appearance", label: t("Configuración") },
+                { id: "data", label: t("Exportar / Importar") },
+                { id: "legal", label: t("Legal") },
+              ] as const).map((section) => (
+                <button
+                  key={section.id}
+                  type="button"
+                  aria-pressed={settingsSection === section.id}
+                  onClick={() => setSettingsSection(section.id)}
+                  className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm ${
+                    settingsSection === section.id
+                      ? "border-[var(--accent)] bg-[var(--pill)] text-[var(--accent-strong)]"
+                      : "border-[var(--border)] bg-transparent"
+                  }`}
+                >
+                  {section.label}
+                </button>
+              ))}
+            </div>
 
-              <div data-tour="settings-sync" className="card p-6 shadow-soft">
-                <h2 className="text-xl font-semibold">{t("Sincronizacion")}</h2>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Compartir con otro dispositivo.")}
-                </p>
-                <div className="mt-4 flex flex-col gap-3">
-                  <div className="rounded-2xl border border-dashed border-[var(--border)] p-4 text-sm text-[var(--muted)]">
-                    {t("Ultimo sync")}: {lastSyncAt ? formatDateTime(lastSyncAt, language) : t("pendiente")}
-                    {syncError && (
-                      <div className="mt-2 text-xs text-[var(--accent-strong)]">
-                        {syncError}
+            <div className="mt-6">
+              {settingsSection === "appearance" && (
+                <div data-tour="settings-configuration" className="grid gap-6 lg:grid-cols-2 lg:items-start">
+                  <div className="card p-6 shadow-soft">
+                    <h2 className="text-xl font-semibold">{t("Tema")}</h2>
+                    <p className="mt-2 text-sm text-[var(--muted)]">{t("Ajusta la apariencia de la app.")}</p>
+                    <div className="mt-4 grid gap-2 sm:grid-cols-3">
+                      {([
+                        { value: "light", label: t("Claro") },
+                        { value: "dark", label: t("Oscuro") },
+                        { value: "system", label: t("Sistema") },
+                      ] as const).map((option) => (
+                        <button
+                          key={option.value}
+                          type="button"
+                          aria-pressed={theme === option.value}
+                          onClick={() => setTheme(option.value)}
+                          className={`rounded-2xl border px-4 py-3 text-sm transition ${
+                            theme === option.value
+                              ? "border-[var(--accent)] bg-[var(--pill)] text-[var(--accent-strong)]"
+                              : "border-[var(--border)] bg-transparent text-[var(--text)] hover:bg-[var(--pill-muted)]"
+                          }`}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="card p-6 shadow-soft">
+                    <h2 className="text-xl font-semibold">{t("Idioma")}</h2>
+                    <p className="mt-2 text-sm text-[var(--muted)]">
+                      {t("Elige el idioma de la interfaz.")}
+                    </p>
+                    <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                      {([
+                        { value: "es", label: "Español" },
+                        { value: "en", label: "English" },
+                      ] as const).map((option) => (
+                        <button
+                          key={option.value}
+                          type="button"
+                          aria-pressed={language === option.value}
+                          onClick={() => setLanguage(option.value)}
+                          className={`rounded-2xl border px-4 py-3 text-sm transition ${
+                            language === option.value
+                              ? "border-[var(--accent)] bg-[var(--pill)] text-[var(--accent-strong)]"
+                              : "border-[var(--border)] bg-transparent text-[var(--text)] hover:bg-[var(--pill-muted)]"
+                          }`}
+                        >
+                          {option.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="card p-6 shadow-soft">
+                    <h2 className="text-xl font-semibold">{t("Ver visita rapida")}</h2>
+                    <p className="mt-2 text-sm text-[var(--muted)]">
+                      {t("En menos de un minuto te enseño las partes clave para empezar.")}
+                    </p>
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowOnboardingPrompt(false)
+                          startOnboarding()
+                        }}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      >
+                        {t("Empezar")}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="card p-6 shadow-soft">
+                    <h2 className="text-xl font-semibold">{t("Familias de alimentos")}</h2>
+                    <p className="mt-2 text-sm text-[var(--muted)]">
+                      {t("Edita familias de alimentos, imagenes y orden de la pantalla principal.")}
+                    </p>
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        onClick={() => setShowFamilyManager(true)}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      >
+                        {t("Editar familias")}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="card p-6 shadow-soft">
+                    <h2 className="text-xl font-semibold">{t("Alimentos ocultos")}</h2>
+                    <p className="mt-2 text-sm text-[var(--muted)]">
+                      {t("Gestiona los alimentos ocultos desde un panel dedicado.")}
+                    </p>
+                    <div className="mt-4">
+                      <button
+                        type="button"
+                        onClick={() => setShowHiddenManager(true)}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      >
+                        {t("Editar alimentos ocultos")}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="card p-6 shadow-soft">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-xl font-semibold">{t("Alergenos")}</h2>
+                      <button
+                        type="button"
+                        onClick={() => setShowLegend(true)}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-1 text-xs"
+                      >
+                        {t("Ver leyenda")}
+                      </button>
+                    </div>
+                    <p className="mt-2 text-sm text-[var(--muted)]">
+                      {t("Consulta las abreviaturas usadas en la lista.")}
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {settingsSection === "sync" && (
+                <div data-tour="settings-sync" className="card p-6 shadow-soft">
+                  <h2 className="text-xl font-semibold">{t("Sincronizacion")}</h2>
+                  <p className="mt-2 text-sm text-[var(--muted)]">
+                    {t("Compartir con otro dispositivo.")}
+                  </p>
+                  <div className="mt-4 flex flex-col gap-3">
+                    <div className="rounded-2xl border border-dashed border-[var(--border)] p-4 text-sm text-[var(--muted)]">
+                      <div className="flex items-center justify-between gap-3">
+                        <span>
+                          {t("Última sincronización")}: {lastSyncAt ? formatDateWithTimeSeconds(lastSyncAt, language) : t("pendiente")}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={handleSyncNow}
+                          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card)]"
+                          aria-label={t("Sincronizar ahora")}
+                          title={t("Sincronizar ahora")}
+                        >
+                          <SyncIcon />
+                        </button>
                       </div>
-                    )}
+                      {syncError && (
+                        <div className="mt-2 text-xs text-[var(--accent-strong)]">
+                          {syncError}
+                        </div>
+                      )}
+                    </div>
+                    <div className="rounded-2xl border border-[var(--border)] bg-[var(--pill)] p-4 text-sm">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="text-xs text-[var(--muted)]">{t("Código del perfil")}</div>
+                        <div className="flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={handleCopyShareLinkFromSettings}
+                            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card)]"
+                            aria-label={t("Copiar enlace")}
+                            title={t("Copiar enlace")}
+                          >
+                            <CopyIcon />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={handleShareProfile}
+                            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card)]"
+                            aria-label={t("Compartir")}
+                            title={t("Compartir")}
+                          >
+                            <ShareIcon />
+                          </button>
+                          <button
+                            type="button"
+                            onClick={handleOpenShareQr}
+                            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card)]"
+                            aria-label={t("Generar QR")}
+                            title={t("Generar QR")}
+                          >
+                            <QrIcon />
+                          </button>
+                        </div>
+                      </div>
+                      <code className="mt-1 block break-all font-mono text-[13px] text-[var(--text)]">
+                        {currentProfileShareCode || "-"}
+                      </code>
+                    </div>
+                    <div className="flex flex-col gap-2 sm:flex-row">
+                      <input
+                        value={joinShareCode}
+                        onChange={(event) => setJoinShareCode(event.target.value)}
+                        placeholder={t("Pega el codigo o el enlace para cargar un perfil")}
+                        className="w-full rounded-full border border-[var(--border)] bg-transparent px-4 py-2 text-sm"
+                      />
+                      <button
+                        type="button"
+                        onClick={handleJoinShareCode}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      >
+                        {t("Unirse")}
+                      </button>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-3">
+                </div>
+              )}
+
+              {settingsSection === "profile" && (
+                <div data-tour="settings-profiles" className="card p-6 shadow-soft">
+                  <h2 className="text-xl font-semibold">{t("Perfiles")}</h2>
+                  <p className="mt-2 text-sm text-[var(--muted)]">
+                    {t("Gestiona perfiles para diferentes cuidadores.")}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {profiles.map((profile) => (
+                      <button
+                        key={profile.id}
+                        type="button"
+                        onClick={() => {
+                        setProfileId(profile.id)
+                        setNewProfileName(profile.name)
+                        setShowCreateProfileAction(false)
+                        setBabyNameInput(profile.name)
+                        setBabyBirthDateInput(profile.babyBirthDate ?? "")
+                        setCorrectedWeeksInput(String(profile.correctedWeeks ?? 0))
+                      }}
+                        className={`rounded-full border px-4 py-2 text-sm ${
+                          profileId === profile.id
+                            ? "border-[var(--accent)] bg-[var(--pill)]"
+                            : "border-[var(--border)]"
+                        }`}
+                      >
+                        {profile.name}
+                      </button>
+                    ))}
                     <button
                       type="button"
-                      onClick={handleCopyShareCode}
-                      className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      onClick={() => {
+                        setShowCreateProfileAction(true)
+                        setProfileId("")
+                        setNewProfileName("")
+                        setBabyNameInput("")
+                        setBabyBirthDateInput("")
+                        setCorrectedWeeksInput("0")
+                      }}
+                      className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--pill)]"
+                      aria-label={t("Nuevo perfil")}
+                      title={t("Nuevo perfil")}
                     >
-                      {copyStatus === "success"
-                        ? t("Copiado")
-                        : copyStatus === "error"
-                          ? t("Error al copiar")
-                        : t("Copiar enlace")}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleOpenShareQr}
-                      className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                    >
-                      {t("Generar QR")}
+                      <AddIcon />
                     </button>
                   </div>
-                  {copyStatus === "success" && (
-                    <div className="text-xs text-[var(--muted)]">
-                      {t("Enlace copiado al portapapeles.")}
-                    </div>
-                  )}
-                  {copyStatus === "error" && (
-                    <div className="text-xs text-[var(--accent-strong)]">
-                      {t("No se pudo copiar. Prueba de nuevo.")}
-                    </div>
-                  )}
-                  <div className="flex flex-col gap-2 sm:flex-row">
+                  <div className="mt-4 space-y-3 border-t border-[var(--border)] pt-4">
+                    <div className="text-sm font-semibold">{t("Ficha del bebe")}</div>
                     <input
-                      value={joinShareCode}
-                      onChange={(event) => setJoinShareCode(event.target.value)}
-                      placeholder={t("Pega el enlace")}
+                      value={babyNameInput}
+                      onChange={(event) => {
+                        const value = event.target.value
+                        setBabyNameInput(value)
+                        setNewProfileName(value)
+                      }}
+                      placeholder={t("Nombre")}
                       className="w-full rounded-full border border-[var(--border)] bg-transparent px-4 py-2 text-sm"
                     />
-                    <button
-                      type="button"
-                      onClick={handleJoinShareCode}
-                      className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                    >
-                      {t("Unirse")}
-                    </button>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <label className="flex flex-col gap-1 text-xs text-[var(--muted)]">
+                        <span>{t("Fecha de nacimiento")}</span>
+                        <input
+                          type="date"
+                          value={babyBirthDateInput}
+                          onChange={(event) => setBabyBirthDateInput(event.target.value)}
+                          className="rounded-full border border-[var(--border)] bg-transparent px-4 py-2 text-sm text-[var(--text)]"
+                        />
+                      </label>
+                      <label className="flex flex-col gap-1 text-xs text-[var(--muted)]">
+                        <span>{t("Semanas de correccion")}</span>
+                        <input
+                          type="number"
+                          min={0}
+                          value={correctedWeeksInput}
+                          onChange={(event) => setCorrectedWeeksInput(event.target.value)}
+                          className="rounded-full border border-[var(--border)] bg-transparent px-4 py-2 text-sm text-[var(--text)]"
+                        />
+                      </label>
+                    </div>
+                    <label className="flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-2 text-xs">
+                      <input
+                        type="checkbox"
+                        checked={showNotSuitableFoods}
+                        onChange={(event) => setShowNotSuitableFoods(event.target.checked)}
+                      />
+                      {t("Mostrar alimentos no aptos todavia")}
+                    </label>
+                    {correctedAgeMonths !== null && (
+                      <div className="text-xs text-[var(--muted)]">
+                        {t("Edad corregida actual: {age} meses.").replace(
+                          "{age}",
+                          String(correctedAgeMonths)
+                        )}
+                      </div>
+                    )}
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      {showCreateProfileAction ? (
+                        <button
+                          type="button"
+                          onClick={handleCreateProfile}
+                          className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                        >
+                          {t("Crear")}
+                        </button>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={handleSaveProfileDetails}
+                          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--pill)]"
+                          aria-label={t("Guardar")}
+                          title={t("Guardar")}
+                        >
+                          <CheckIcon />
+                        </button>
+                      )}
+                      {!showCreateProfileAction && (
+                        <button
+                          type="button"
+                          onClick={handleDeleteProfile}
+                          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)]"
+                          aria-label={t("Eliminar")}
+                          title={t("Eliminar")}
+                        >
+                          <DeleteIcon />
+                        </button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
 
-              <div className="card p-6 shadow-soft">
-                <h2 className="text-xl font-semibold">{t("Perfiles")}</h2>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Gestiona perfiles para diferentes cuidadores.")}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  {profiles.map((profile) => (
-                    <button
-                      key={profile.id}
-                      type="button"
-                      onClick={() => setProfileId(profile.id)}
-                      className={`rounded-full border px-4 py-2 text-sm ${
-                        profileId === profile.id
-                          ? "border-[var(--accent)] bg-[var(--pill)]"
-                          : "border-[var(--border)]"
-                      }`}
-                    >
-                      {profile.name}
-                    </button>
-                  ))}
+              {settingsSection === "data" && (
+                <div data-tour="settings-data" className="card p-6 shadow-soft">
+                  <div>
+                    <h2 className="text-xl font-semibold">{t("Exportar / Importar")}</h2>
+                    <p className="mt-2 text-sm text-[var(--muted)]">
+                      {t("Perfil actual o copia de seguridad completa de la base de datos.")}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-3">
+                      <button
+                        type="button"
+                        onClick={handleExport}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      >
+                        {t("Exportar perfil")}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => importInputRef.current?.click()}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      >
+                        {t("Importar perfil")}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={handleExportFullBackup}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      >
+                        {t("Exportar backup completo")}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => fullBackupImportInputRef.current?.click()}
+                        className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                      >
+                        {t("Importar backup completo (replace)")}
+                      </button>
+                      <input
+                        ref={importInputRef}
+                        type="file"
+                        accept="application/json"
+                        className="hidden"
+                        onChange={handleImport}
+                      />
+                      <input
+                        ref={fullBackupImportInputRef}
+                        type="file"
+                        accept="application/json"
+                        className="hidden"
+                        onChange={handleImportFullBackup}
+                      />
+                    </div>
+                  </div>
+
                 </div>
-                <div className="mt-4 flex flex-col gap-3">
-                  <input
-                    value={newProfileName}
-                    onChange={(event) => setNewProfileName(event.target.value)}
-                    placeholder={t("Nombre del perfil")}
-                    className="w-full rounded-full border border-[var(--border)] bg-transparent px-4 py-2 text-sm"
-                  />
-                  <div className="flex flex-wrap gap-3">
-                    <button
-                      type="button"
-                      onClick={handleCreateProfile}
+              )}
+
+              {settingsSection === "legal" && (
+                <div className="card p-6 shadow-soft">
+                  <h2 className="text-xl font-semibold">{t("Legal")}</h2>
+                  <p className="mt-2 text-sm text-[var(--muted)]">
+                    {t("Consulta privacidad, descargo medico y licencia AGPLv3.")}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    <a
+                      href="/legal/privacy.html"
+                      target="_blank"
+                      rel="noreferrer"
                       className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
                     >
-                      {t("Crear")}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleRenameProfile}
+                      {t("Privacidad")}
+                    </a>
+                    <a
+                      href="/legal/disclaimer.html"
+                      target="_blank"
+                      rel="noreferrer"
                       className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
                     >
-                      {t("Renombrar")}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleDeleteProfile}
-                      className="rounded-full border border-[var(--border)] px-4 py-2 text-sm"
+                      {t("Disclaimer")}
+                    </a>
+                    <a
+                      href="/legal/license.html"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
                     >
-                      {t("Eliminar")}
-                    </button>
+                      {t("Licencia")}
+                    </a>
                   </div>
                 </div>
-              </div>
-
-              <div className="card p-6 shadow-soft">
-                <h2 className="text-xl font-semibold">{t("Familias")}</h2>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Edita familias, imagenes y orden de la pantalla principal.")}
-                </p>
-                <div className="mt-4">
-                  <button
-                    type="button"
-                    onClick={() => setShowFamilyManager(true)}
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Editar familias")}
-                  </button>
-                </div>
-              </div>
-
-              </div>
-              <div className="flex flex-col gap-6">
-
-              <div className="card p-6 shadow-soft">
-                <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-semibold">{t("Alergenos")}</h2>
-                  <button
-                    type="button"
-                    onClick={() => setShowLegend(true)}
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-1 text-xs"
-                  >
-                    {t("Ver leyenda")}
-                  </button>
-                </div>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Consulta las abreviaturas usadas en la lista.")}
-                </p>
-              </div>
-
-              <div className="card p-6 shadow-soft">
-                <h2 className="text-xl font-semibold">{t("Legal")}</h2>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Consulta privacidad, descargo medico y licencia AGPLv3.")}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <a
-                    href="/legal/privacy.html"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Privacidad")}
-                  </a>
-                  <a
-                    href="/legal/disclaimer.html"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Disclaimer")}
-                  </a>
-                  <a
-                    href="/legal/license.html"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Licencia")}
-                  </a>
-                </div>
-              </div>
-
-              <div className="card p-6 shadow-soft">
-                <h2 className="text-xl font-semibold">{t("Exportar / Importar")}</h2>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Perfil actual o copia de seguridad completa de la base de datos.")}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <button
-                    type="button"
-                    onClick={handleExport}
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Exportar perfil")}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => importInputRef.current?.click()}
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Importar perfil")}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleExportFullBackup}
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Exportar backup completo")}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => fullBackupImportInputRef.current?.click()}
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Importar backup completo (replace)")}
-                  </button>
-                  <input
-                    ref={importInputRef}
-                    type="file"
-                    accept="application/json"
-                    className="hidden"
-                    onChange={handleImport}
-                  />
-                  <input
-                    ref={fullBackupImportInputRef}
-                    type="file"
-                    accept="application/json"
-                    className="hidden"
-                    onChange={handleImportFullBackup}
-                  />
-                </div>
-              </div>
-
-              <div className="card p-6 shadow-soft">
-                <h2 className="text-xl font-semibold">{t("Alimentos ocultos")}</h2>
-                <p className="mt-2 text-sm text-[var(--muted)]">
-                  {t("Gestiona los alimentos ocultos desde un panel dedicado.")}
-                </p>
-                <div className="mt-4">
-                  <button
-                    type="button"
-                    onClick={() => setShowHiddenManager(true)}
-                    className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
-                  >
-                    {t("Editar alimentos ocultos")}
-                  </button>
-                </div>
-              </div>
-              </div>
+              )}
             </div>
           </section>
         )}
@@ -3588,21 +4220,23 @@ const App = () => {
               href={AUTHOR_GITHUB_URL}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-1"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-1"
               aria-label="GitHub"
               title="GitHub"
             >
-              🐙 GitHub
+              <GitHubIcon />
+              <span className="hidden sm:inline">GitHub</span>
             </a>
             <a
               href={AUTHOR_LINKEDIN_URL}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-1"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-[var(--pill)] px-3 py-1"
               aria-label="LinkedIn"
               title="LinkedIn"
             >
-              💼 LinkedIn
+              <LinkedInIcon />
+              <span className="hidden sm:inline">LinkedIn</span>
             </a>
             <a className="underline" href="/legal/privacy.html" target="_blank" rel="noreferrer">{t("Privacidad")}</a>
             <a className="underline" href="/legal/disclaimer.html" target="_blank" rel="noreferrer">{t("Disclaimer")}</a>
@@ -3611,9 +4245,43 @@ const App = () => {
         </div>
       </footer>
 
+      {floatingNotice && (
+        <div className="fixed right-4 top-4 z-50">
+          <div
+            className={`rounded-xl border px-4 py-2 text-sm shadow-soft ${
+              floatingNotice.type === "error"
+                ? "border-red-300 bg-red-50 text-red-800"
+                : "border-[var(--border)] bg-[var(--card)] text-[var(--text)]"
+            }`}
+          >
+            {floatingNotice.text}
+          </div>
+        </div>
+      )}
+
+      {!cookieNoticeAccepted && (
+        <div className="fixed bottom-4 left-1/2 z-40 w-[min(94vw,760px)] -translate-x-1/2 rounded-2xl border border-[var(--border)] bg-[var(--card)]/95 p-3 shadow-soft backdrop-blur">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-xs text-[var(--muted)]">
+              {t("Usamos almacenamiento local para guardar progreso y sincronizacion.")} {" "}
+              <a className="underline" href="/legal/privacy.html" target="_blank" rel="noreferrer">
+                {t("Privacidad")}
+              </a>
+            </p>
+            <button
+              type="button"
+              onClick={handleAcceptCookieNotice}
+              className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-xs"
+            >
+              {t("Entendido")}
+            </button>
+          </div>
+        </div>
+      )}
+
       {showOnboardingPrompt && !onboardingActive && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/50 px-4">
-          <div className="card w-full max-w-md p-6 shadow-soft">
+          <div className="card w-full max-w-md max-h-[88vh] overflow-y-auto p-6 shadow-soft">
             <h3 className="text-xl font-semibold">{t("¿Quieres una visita rápida?")}</h3>
             <p className="mt-2 text-sm text-[var(--muted)]">
               {t("En menos de un minuto te enseño las partes clave para empezar.")}
@@ -3662,7 +4330,7 @@ const App = () => {
                 const viewportHeight = window.innerHeight
                 const isMobile = viewportWidth < 768
                 const tooltipWidth = Math.min(viewportWidth * 0.92, 360)
-                const tooltipHeight = 220
+                const tooltipHeight = 240
                 const margin = 12
                 const belowTop = onboardingTargetRect.top + onboardingTargetRect.height + 16
                 const aboveTop = onboardingTargetRect.top - tooltipHeight - 16
@@ -3670,8 +4338,10 @@ const App = () => {
                 const forceBelow = currentOnboardingStep.placement === "below"
                 if (isMobile && !forceAbove && !forceBelow) {
                   return {
-                    top: viewportHeight - tooltipHeight - margin,
-                    left: Math.max((viewportWidth - tooltipWidth) / 2, margin),
+                    left: margin,
+                    right: margin,
+                    bottom: margin,
+                    width: "auto",
                   }
                 }
                 const shouldUseAbove = forceAbove
@@ -3802,7 +4472,7 @@ const App = () => {
           onClick={() => setActiveFoodId(null)}
         >
           <div
-            className="card w-full max-w-3xl p-6 shadow-soft"
+            className="card w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 shadow-soft"
             onClick={(event) => event.stopPropagation()}
           >
             <div>
@@ -3887,9 +4557,41 @@ const App = () => {
                   )}
                   <span className="pill">{formatFamily(activeFood.family)}</span>
                   <span className="pill">{renderAllergens(activeFood.allergens, language)}</span>
+                  {typeof activeFood.recommendedFromMonths === "number" && (
+                    <span
+                      className={`pill ${
+                        activeFoodAgeWarningHighlighted
+                          ? "border !border-red-700 !bg-red-600 !text-white font-semibold"
+                          : ""
+                      }`}
+                    >
+                      {activeFoodSuitability.isTooEarly
+                        ? `${t("No apto")}: +${activeFood.recommendedFromMonths}m`
+                        : `+${activeFood.recommendedFromMonths}m`}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
+
+            {typeof activeFood.recommendedFromMonths === "number" && (
+              <div
+                className={`mt-4 rounded-2xl border px-4 py-3 text-sm ${
+                  activeFoodAgeWarningHighlighted
+                    ? "border-red-300 bg-red-50 text-red-800"
+                    : "border-[var(--border)] bg-[var(--pill)] text-[var(--muted)]"
+                }`}
+              >
+                {correctedAgeMonths === null
+                  ? t("Recomendado desde {months} meses.").replace(
+                      "{months}",
+                      String(activeFood.recommendedFromMonths)
+                    )
+                  : t("Recomendado desde {months} meses. Edad actual: {age} meses.")
+                      .replace("{months}", String(activeFood.recommendedFromMonths))
+                      .replace("{age}", String(correctedAgeMonths))}
+              </div>
+            )}
 
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
               <div className="card p-4">
@@ -4040,7 +4742,7 @@ const App = () => {
           onClick={() => setShowImagePicker(false)}
         >
           <div
-            className="card w-full max-w-4xl p-6"
+            className="card w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between">
@@ -4127,18 +4829,11 @@ const App = () => {
           onClick={() => setShowAddFood(false)}
         >
           <div
-            className="card w-full max-w-xl p-6"
+            className="card w-full max-w-xl max-h-[90vh] overflow-y-auto p-6"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="flex items-center justify-between">
+            <div>
               <h3 className="text-xl font-semibold">{t("Anadir alimento")}</h3>
-              <button
-                type="button"
-                onClick={() => setShowAddFood(false)}
-                className="rounded-full border border-[var(--border)] px-3 py-1 text-sm"
-              >
-                {t("Cerrar")}
-              </button>
             </div>
             <div className="mt-4 grid gap-3">
               <input
@@ -4148,9 +4843,9 @@ const App = () => {
                 className="rounded-2xl border border-[var(--border)] bg-transparent px-4 py-3 text-sm"
               />
               <div>
-                <div className="mb-2 text-xs text-[var(--muted)]">{t("Familia")}</div>
+                <div className="mb-2 text-xs text-[var(--muted)]">{t("Familia de alimentos")}</div>
                 <PillMenu
-                  icon="☰"
+                  icon={<FilterListIcon />}
                   value={newFoodFamily}
                   ariaLabel={t("Seleccionar familia del nuevo alimento")}
                   onChange={(value) => setNewFoodFamily(value)}
@@ -4172,16 +4867,20 @@ const App = () => {
               <button
                 type="button"
                 onClick={() => setShowAddFood(false)}
-                className="rounded-full border border-[var(--border)] px-4 py-2 text-sm"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)]"
+                aria-label={t("Cancelar")}
+                title={t("Cancelar")}
               >
-                {t("Cancelar")}
+                <CloseIcon />
               </button>
               <button
                 type="button"
                 onClick={handleAddFood}
-                className="rounded-full border border-[var(--border)] bg-[var(--pill)] px-4 py-2 text-sm"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--pill)]"
+                aria-label={t("Guardar")}
+                title={t("Guardar")}
               >
-                {t("Guardar")}
+                <CheckIcon />
               </button>
             </div>
           </div>
@@ -4194,7 +4893,7 @@ const App = () => {
           onClick={() => setShowFamilyImagePicker(false)}
         >
           <div
-            className="card w-full max-w-4xl p-6"
+            className="card w-full max-w-4xl max-h-[90vh] overflow-y-auto p-6"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between">
@@ -4340,7 +5039,7 @@ const App = () => {
           onClick={() => setShowHiddenManager(false)}
         >
           <div
-            className="card w-full max-w-2xl p-6"
+            className="card w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-center justify-between">

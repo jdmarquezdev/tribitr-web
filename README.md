@@ -17,7 +17,9 @@ Tribitr es una app web para familias/cuidadores que quieren llevar un seguimient
 ### Funcionalidades principales
 
 - Home por familias (incluye tarjeta "Todos los alimentos").
-- Lista con busqueda, filtro por familia, `Ocultar 3/3`, `Mostrar ocultos` y orden manual/alfabetico.
+- Lista con busqueda y controles por icono:
+  - panel `Filtros` con familia, `Ocultar 3/3` y `Mostrar ocultos`,
+  - panel `Ordenar` con `A-Z` / `Z-A`.
 - Reordenacion por drag & drop.
 - Ficha de alimento con:
   - historial de exposiciones,
@@ -25,15 +27,20 @@ Tribitr es una app web para familias/cuidadores que quieren llevar un seguimient
   - ocultar/mostrar alimento,
   - atribucion de imagen,
   - contenido IA (descripcion y reacciones) generado desde backend.
+- Recomendaciones por edad:
+  - datos del bebe en perfil (`nombre`, `fecha de nacimiento`, `semanas de correccion`),
+  - filtro de alimentos no aptos por edad (ocultos por defecto),
+  - opcion `Mostrar alimentos no aptos todavia` en Ajustes.
 - Gestion de imagen por alimento/familia:
   - buscar candidatas,
   - URL manual,
   - archivo local,
   - borrar override.
-- Multi-perfil (crear, renombrar, seleccionar, eliminar).
-- Sincronizacion por enlace secreto (sin login).
+- Multi-perfil (crear con `+`, seleccionar, guardar ficha de perfil, eliminar).
+- Sincronizacion por enlace secreto (sin login): copiar enlace, compartir, QR y sincronizacion manual.
 - Exportar/importar perfil y backup completo (segun endpoints backend).
 - Tema claro/oscuro/sistema + idioma ES/EN.
+- Aviso discreto de almacenamiento local/cookies con enlace a privacidad.
 
 ### Arquitectura
 
@@ -124,6 +131,12 @@ Revisa el detalle completo en `backend/.env.example`.
   - `POST /api/backup/export`
   - `POST /api/backup/import`
 
+### Notas de sincronizacion (cliente)
+
+- `push` tras cambios locales (con debounce).
+- `pull` al arrancar, al recuperar foco y de forma periodica.
+- `Última sincronización` en UI refleja el ultimo `pull` exitoso.
+
 ### Licencia y legal
 
 Este proyecto esta bajo **GNU Affero General Public License v3.0 o posterior (AGPL-3.0-or-later)**.
@@ -137,7 +150,7 @@ Este proyecto esta bajo **GNU Affero General Public License v3.0 o posterior (AG
 ### Autor
 
 - Juan Diego Marquez Tebar
-- Contacto: `juandiego.marquez@gmail.com`
+- Contacto: `hola@jdmarquez.dev`
 
 ---
 
@@ -154,7 +167,9 @@ Tribitr is a simple web app to track baby food introduction with a clear 3-expos
 ### Main features
 
 - Family home view (including an "All foods" card).
-- Food list with search, family filter, `Hide 3/3`, `Show hidden`, and manual/alphabetical order.
+- Food list with search and icon-based controls:
+  - `Filters` panel for family, `Hide 3/3`, and `Show hidden`,
+  - `Sort` panel for `A-Z` / `Z-A`.
 - Drag-and-drop reordering.
 - Food detail with:
   - exposure history,
@@ -162,15 +177,20 @@ Tribitr is a simple web app to track baby food introduction with a clear 3-expos
   - hide/unhide,
   - image attribution,
   - AI-generated text (description and reactions) from backend.
+- Age-based recommendations:
+  - baby profile data (`name`, `birth date`, `correction weeks`),
+  - age suitability filtering (not-suitable foods hidden by default),
+  - `Show not suitable foods yet` option in Settings.
 - Food/family image management:
   - fetch candidates,
   - manual URL,
   - local upload,
   - clear override.
-- Multi-profile support (create, rename, select, delete).
-- Secret-link sync across devices (no login).
+- Multi-profile support (create with `+`, select, save profile details, delete).
+- Secret-link sync across devices (no login): copy link, share, QR, and manual sync.
 - Profile export/import and full backup restore (depending on backend endpoints).
 - Light/dark/system theme + ES/EN language toggle.
+- Minimal local-storage/cookies notice with privacy link.
 
 ### Architecture
 
@@ -261,6 +281,12 @@ See full details in `backend/.env.example`.
   - `POST /api/backup/export`
   - `POST /api/backup/import`
 
+### Sync notes (client)
+
+- `push` runs after local changes (debounced).
+- `pull` runs on app start, on window focus, and periodically.
+- `Last sync` in the UI reflects the latest successful `pull`.
+
 ### License and legal
 
 This project is licensed under **GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)**.
@@ -274,4 +300,4 @@ This project is licensed under **GNU Affero General Public License v3.0 or later
 ### Author
 
 - Juan Diego Marquez Tebar
-- Contact: `juandiego.marquez@gmail.com`
+- Contact: `hola@jdmarquez.dev`

@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react"
+import { fireEvent, render, screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { vi } from "vitest"
 import seedData from "./data/foods.seed.json"
@@ -17,12 +17,17 @@ vi.mock("./data/db", () => {
     profileId: "profile-1",
     profileName: "Bebe",
     shareCode: "share-1",
+    babyName: "Bebe",
+    babyBirthDate: "2099-01-01",
+    correctedWeeks: 0,
     revision: 1,
     updatedAt: new Date().toISOString(),
     settings: {
       theme: "system",
+      language: "es",
       hideIntroduced: false,
       showHidden: false,
+      showNotSuitableFoods: false,
     },
     foods: {},
     order: [],
@@ -232,6 +237,72 @@ describe("App", () => {
       },
       { timeout: 3000 }
     )
+  })
+
+  it("shows not suitable foods with warning when enabled in settings", async () => {
+    const user = userEvent.setup()
+    renderApp()
+
+    const settingsButton = await screen.findByRole("button", { name: "Ajustes" })
+    await user.click(settingsButton)
+
+    const birthDateInput = await screen.findByLabelText("Fecha de nacimiento")
+    fireEvent.change(birthDateInput, { target: { value: "2099-01-01" } })
+
+    const showNotSuitableToggle = await screen.findByRole("checkbox", {
+      name: "Mostrar no aptos todavia",
+    })
+    if ((showNotSuitableToggle as HTMLInputElement).checked) {
+      await user.click(showNotSuitableToggle)
+    }
+
+    const saveProfileButton = screen.getByRole("button", { name: "Guardar ficha" })
+    await user.click(saveProfileButton)
+
+    const backFromSettings = await screen.findByRole("button", { name: "Volver" })
+    await user.click(backFromSettings)
+
+    const cta = await screen.findByRole("button", {
+      name: /Todos los alimentos/i,
+    })
+    await user.click(cta)
+
+    const settingsButtonAgain = await screen.findByRole("button", { name: "Ajustes" })
+    await user.click(settingsButtonAgain)
+
+    const showNotSuitableToggleInSettings = await screen.findByRole("checkbox", {
+      name: "Mostrar no aptos todavia",
+    })
+    await user.click(showNotSuitableToggleInSettings)
+
+    const backButton = await screen.findByRole("button", { name: "Volver" })
+    await user.click(backButton)
+
+    const openListAgain = await screen.findByRole("button", {
+      name: /Todos los alimentos/i,
+    })
+    await user.click(openListAgain)
+
+    expect(await screen.findByText("Atun")).toBeInTheDocument()
+    expect(screen.getAllByText(/\+12m/).length).toBeGreaterThan(0)
+  })
+
+  it("shows and dismisses cookie notice", async () => {
+    const user = userEvent.setup()
+    renderApp()
+
+    expect(
+      await screen.findByText("Usamos almacenamiento local para guardar progreso y sincronizacion.")
+    ).toBeInTheDocument()
+
+    const okButton = screen.getByRole("button", { name: "Entendido" })
+    await user.click(okButton)
+
+    await waitFor(() => {
+      expect(
+        screen.queryByText("Usamos almacenamiento local para guardar progreso y sincronizacion.")
+      ).not.toBeInTheDocument()
+    })
   })
 
   it("generates description via ai endpoint", async () => {
